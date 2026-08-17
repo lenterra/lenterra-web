@@ -11,6 +11,7 @@
     "typecheck": "npm run typecheck --workspaces --if-present",
     "dev": "npm run dev --workspace @lenterra/dashboard",
     "build:site": "node site/build.mjs",
-    "check:site": "node site/build.mjs && node site/check.mjs"
+    "check:site": "node site/build.mjs && node site/check.mjs",
+    "test:e2e": "npm run test:e2e --workspace @lenterra/dashboard"
   }
 }

@@ -15,5 +15,9 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     setupFiles: ['./src/test-setup.ts'],
+    // Component tests only. `e2e/` is Playwright's, and vitest collecting it
+    // fails in a way that looks like broken tests rather than like a runner
+    // picking up files it was never meant to run.
+    include: ['src/**/*.{test,spec}.{ts,tsx}'],
   },
 });

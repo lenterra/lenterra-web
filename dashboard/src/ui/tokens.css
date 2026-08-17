@@ -13,10 +13,33 @@
   --surface: #FFFFFF;
   --ink-900: #12151A;
   --ink-700: #3C4453;
-  --ink-500: #6B7484;
+  /*
+   * Muted text. Darkened from #6B7484, which cleared 4.5:1 on white and failed
+   * on all three tinted grounds — canvas, ink-050 and warning-100 — where it
+   * is actually used. It carries the secondary line on almost every surface:
+   * "last active", "updated at", "played offline".
+   */
+  --ink-500: #666F7E;
   --ink-100: #E4E7EC;
   --ink-050: #F2F4F7;
+  /*
+   * The brand blue, and a darker one for anything carrying text.
+   *
+   * #2E8DE1 on white is 3.49:1. That clears the 3:1 that non-text UI needs —
+   * a border, a focus ring, a chart series — and falls short of the 4.5:1 that
+   * body text needs, in both directions: blue text on white and white text on
+   * a blue button fail the same way.
+   *
+   * So the brand colour keeps its jobs and text gets --blue-700, darkened until
+   * it clears 4.5:1 against **every ground it sits on** — not only white. Most
+   * of this product sits on the tinted canvas, and a colour chosen against
+   * white alone fails there by a margin small enough that nobody notices until
+   * somebody cannot read it. A teacher on a school laptop with a washed-out
+   * panel, in a room with the lights off because the projector is on, is the
+   * person the ratio is about.
+   */
   --blue-600: #2E8DE1;
+  --blue-700: #1B71BD;
   --blue-100: #D6E9FB;
   --orange-600: #ED5B3A;
   --orange-100: #FDE2DA;

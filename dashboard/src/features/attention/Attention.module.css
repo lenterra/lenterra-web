@@ -15,5 +15,5 @@
 }
 .button:hover { background: var(--ink-050); }
 .reason { color: var(--ink-900); }
-.action { color: var(--blue-600); font-size: 0.875rem; white-space: nowrap; }
+.action { color: var(--blue-700); font-size: 0.875rem; white-space: nowrap; }
 .muted { color: var(--ink-500); margin: 0; }

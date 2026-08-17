@@ -18,7 +18,7 @@
   min-height: var(--touch);
   border: 0;
   border-radius: var(--radius-md);
-  background: var(--blue-600);
+  background: var(--blue-700);
   color: #fff;
   cursor: pointer;
 }

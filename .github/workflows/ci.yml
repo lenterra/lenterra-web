@@ -55,3 +55,39 @@ jobs:
         uses: gitleaks/gitleaks-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  e2e:
+    name: teacher flow and accessibility
+    runs-on: ubuntu-latest
+    needs: check
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+
+      # Chromium only. The audience is a school laptop, and running three
+      # engines to learn the same thing three times is time a pull request
+      # spends waiting.
+      - name: install browser
+        run: npm run test:e2e:install --workspace @lenterra/dashboard
+
+      # The teacher flow — sign in, create a class, watch the roster, drill into
+      # a student, assign — plus axe on every route. Accessibility is a merge
+      # gate here rather than an audit: a teacher using this between lessons on
+      # a laptop with an unusable trackpad is the common case, not the edge one.
+      - name: e2e and accessibility
+        run: npm run test:e2e
+
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: |
+            dashboard/playwright-report/
+            dashboard/test-results/
+          retention-days: 14

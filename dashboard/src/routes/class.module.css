@@ -31,7 +31,7 @@
 .gapSuggestion { color: var(--ink-500); font-size: 0.8125rem; }
 
 .teaching { margin-top: var(--space-xs); font-size: 0.9375rem; }
-.teaching summary { cursor: pointer; color: var(--blue-600); }
+.teaching summary { cursor: pointer; color: var(--blue-700); }
 .teaching p { margin: var(--space-sm) 0 0; color: var(--ink-700); }
 .misconception strong { color: var(--ink-900); }
 

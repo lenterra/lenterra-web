@@ -4,3 +4,10 @@ dist/
 .env.local
 *.log
 dist-site/
+
+# Playwright output. Regenerated on every run; a committed report is stale
+# the moment it lands.
+dashboard/test-results/
+dashboard/playwright-report/
+test-results/
+playwright-report/
