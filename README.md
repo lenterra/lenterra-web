@@ -1,17 +1,30 @@
-# lenterra.github.io
+# lenterra-web
 
 Two static artefacts, one repository, one deploy:
 
 | Path | What |
 |---|---|
 | `dashboard/` | The teacher dashboard, served at `/dashboard` |
-| `site/` | The public landing site, served at `/` — not built yet |
+| `site/` | The public landing site, served at `/` |
 
 Neither has a backend. Both call the same Nakama RPCs the student app calls,
 under the same authorisation model. That is deliberate: a dashboard-specific API
 would mean a second implementation of "may this teacher read this class", and
 duplicated authorisation is how a teacher ends up able to read another school's
 children's data.
+
+## Paths, and what the repository name decides
+
+Every internal link here is root-absolute: the site's navigation is built from
+`/`, `/en/`, `/sekolah/`, and the dashboard's Vite `base` is `/dashboard/`.
+That holds while the site is served from the root of a domain — a custom domain,
+or the organisation's own `<org>.github.io` repository.
+
+Under a **project** Pages path (`https://<org>.github.io/lenterra-web/`) it does
+not: every link would resolve one level too high and the dashboard would load no
+assets at all. Serving from a project path means setting Vite's `base` and the
+site generator's link prefix together, and updating the asset pattern in
+`dashboard/scripts/budget.mjs` to match — it looks for `/dashboard/assets/`.
 
 ## Running the dashboard
 
