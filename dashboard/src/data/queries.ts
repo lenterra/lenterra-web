@@ -123,6 +123,7 @@ export interface AttentionList {
 
 export const queryKeys = {
   classes: ['classes'] as const,
+  consent: ['consent'] as const,
   classSummary: (classId: string) => ['class', classId, 'summary'] as const,
   roster: (classId: string) => ['class', classId, 'roster'] as const,
   attention: (classId: string) => ['class', classId, 'attention'] as const,

@@ -133,5 +133,16 @@
       "risk": "Menimbang risiko",
       "response": "Respons serangan"
     }
+  },
+  "consent": {
+    "title": "Persetujuan sekolah diperlukan",
+    "body": "Kelas baru bisa dibuat setelah sekolah mencatat bagaimana persetujuan untuk ikut serta diperoleh. Selama belum dicatat, tidak ada data siswa yang dikumpulkan.",
+    "processLabel": "Bagaimana sekolah memperoleh persetujuan?",
+    "processPlaceholder": "Contoh: Kepala sekolah menandatangani formulir keikutsertaan pada 3 Februari, dan surat pemberitahuan dibagikan kepada orang tua melalui wali kelas.",
+    "processHint": "Tulis dengan kalimat sendiri. Catatan ini yang akan ditanyakan kembali kalau ada yang bertanya, jadi sebutkan siapa, kapan, dan lewat cara apa.",
+    "confirm": "Catat persetujuan",
+    "recordedTitle": "Persetujuan sekolah sudah dicatat",
+    "recordedOn": "Dicatat pada {{date}}",
+    "unknownDate": "tanggal tidak diketahui"
   }
 }

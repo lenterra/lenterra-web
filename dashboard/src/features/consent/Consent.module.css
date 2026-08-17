@@ -1,0 +1,47 @@
+.gate {
+  background: var(--warning-100);
+  border-left: 4px solid var(--warning-600);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  display: grid;
+  gap: var(--space-md);
+}
+.gateTitle { margin: 0; font-size: 1.125rem; }
+.gateBody { margin: 0; color: var(--ink-700); max-width: 42rem; }
+
+.form { display: grid; gap: var(--space-md); max-width: 34rem; }
+.field { display: grid; gap: var(--space-xs); font-size: 0.875rem; color: var(--ink-700); }
+.field textarea {
+  padding: var(--space-md);
+  border: 1px solid var(--ink-300);
+  border-radius: var(--radius-md);
+  font: inherit;
+  font-size: 1rem;
+  resize: vertical;
+}
+.hint { margin: 0; font-size: 0.8125rem; color: var(--ink-500); max-width: 34rem; }
+
+.submit {
+  min-height: var(--touch);
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--blue-600);
+  color: #fff;
+  cursor: pointer;
+  justify-self: start;
+  padding: 0 var(--space-xl);
+}
+.submit:disabled { opacity: 0.6; cursor: default; }
+
+.recorded {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  display: grid;
+  gap: var(--space-xs);
+}
+.recordedTitle { margin: 0; font-size: 1rem; color: var(--success-600); }
+.recordedMeta { margin: 0; font-size: 0.875rem; color: var(--ink-500); }
+/* The note is shown back rather than hidden once accepted: a record nobody can
+   read is a record nobody can check. */
+.note { margin: 0; color: var(--ink-700); max-width: 42rem; white-space: pre-wrap; }

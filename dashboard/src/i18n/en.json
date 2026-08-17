@@ -133,5 +133,16 @@
       "risk": "Weighing risk",
       "response": "Incident response"
     }
+  },
+  "consent": {
+    "title": "School consent is required",
+    "body": "Classes can be created once the school has recorded how consent to participate was obtained. Until it is recorded, no student data is collected.",
+    "processLabel": "How did the school obtain consent?",
+    "processPlaceholder": "For example: the head teacher signed the participation form on 3 February, and a notice went to parents through form tutors.",
+    "processHint": "Write it in your own words. This is the record you will be asked about later, so name who, when, and by what means.",
+    "confirm": "Record consent",
+    "recordedTitle": "School consent is on file",
+    "recordedOn": "Recorded on {{date}}",
+    "unknownDate": "an unknown date"
   }
 }
