@@ -6,30 +6,35 @@
  * injected, so pointing at staging is a build variable rather than a source
  * edit somebody eventually forgets to revert.
  *
- * Missing values throw at module load rather than degrading. A dashboard that
- * starts and then fails every request looks like a server outage to the one
- * person who cannot investigate it.
+ * Every value defaults to production. A build with no environment at all is a
+ * build that talks to the real server, which is what a deploy should do — and
+ * the previous behaviour, throwing at module load, meant a missing variable
+ * produced a dashboard that would not start at all.
  */
 
-function required(name: string, value: string | undefined): string {
-  if (!value || value.length === 0) {
-    throw new Error(
-      `${name} is not set. The dashboard cannot start without it — see dashboard/.env.example.`,
-    );
-  }
-  return value;
-}
+/**
+ * Where the server is, unless a build says otherwise.
+ *
+ * The verifier sits behind the same name as Nakama, so there is one DNS record
+ * and one certificate rather than two.
+ */
+const PRODUCTION = {
+  host: 'lenterra-api.faizath.com',
+  port: '443',
+  verifierUrl: 'https://lenterra-api.faizath.com/verifier',
+  serverKey: 'lenterra',
+} as const;
 
 const env = import.meta.env;
 
 export const config = {
   nakama: {
-    host: required('VITE_NAKAMA_HOST', env.VITE_NAKAMA_HOST),
-    port: env.VITE_NAKAMA_PORT ?? '7350',
-    serverKey: required('VITE_NAKAMA_SERVER_KEY', env.VITE_NAKAMA_SERVER_KEY),
+    host: env.VITE_NAKAMA_HOST ?? PRODUCTION.host,
+    port: env.VITE_NAKAMA_PORT ?? PRODUCTION.port,
+    serverKey: env.VITE_NAKAMA_SERVER_KEY ?? PRODUCTION.serverKey,
     // Anything but a local development host must be TLS (TRD-SEC-005).
     useSsl: (env.VITE_NAKAMA_USE_SSL ?? 'true') !== 'false',
   },
-  verifierUrl: required('VITE_VERIFIER_URL', env.VITE_VERIFIER_URL),
+  verifierUrl: env.VITE_VERIFIER_URL ?? PRODUCTION.verifierUrl,
   buildVersion: env.VITE_BUILD_VERSION ?? 'dev',
 } as const;
