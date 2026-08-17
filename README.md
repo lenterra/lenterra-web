@@ -1,0 +1,44 @@
+# lenterra.github.io
+
+Two static artefacts, one repository, one deploy:
+
+| Path | What |
+|---|---|
+| `dashboard/` | The teacher dashboard, served at `/dashboard` |
+| `site/` | The public landing site, served at `/` — not built yet |
+
+Neither has a backend. Both call the same Nakama RPCs the student app calls,
+under the same authorisation model. That is deliberate: a dashboard-specific API
+would mean a second implementation of "may this teacher read this class", and
+duplicated authorisation is how a teacher ends up able to read another school's
+children's data.
+
+## Running the dashboard
+
+```bash
+npm ci
+cp dashboard/.env.example dashboard/.env.local   # then fill in the values
+npm run dev
+```
+
+`dashboard/.env.local` is required. Nothing in it is a secret — every client
+holds these values — but they are injected rather than committed so that
+pointing at staging is a build variable rather than a source edit.
+
+## Checks
+
+```bash
+npm run typecheck
+npm run test:dashboard
+npm run build:dashboard     # includes the bundle-budget check
+```
+
+The build fails if the initial load exceeds **200 KB gzipped**. That number
+comes from the reference environment in the technical spec: an older Windows
+laptop on a 3G-class connection. It is enforced rather than reviewed, because a
+budget nobody enforces drifts one dependency at a time until a teacher waits
+nine seconds for a class list and nobody can point at the commit responsible.
+
+The wallet SDK is behind a dynamic import for the same reason. A teacher opening
+their class list has not signed in today and should not download the sign-in
+code to find that out.

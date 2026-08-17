@@ -1,0 +1,57 @@
+# Checks that run on every pull request.
+#
+# Separate from `deploy.yml` so a pull request is verified without needing the
+# Pages environment or its configuration.
+
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+
+      - name: typecheck
+        run: npm run typecheck
+
+      - name: tests
+        run: npm run test:dashboard
+
+      - name: build and bundle budget
+        run: npm run build:dashboard
+        env:
+          # Placeholders: the build must not depend on real endpoints to
+          # verify that it compiles and fits the budget.
+          VITE_NAKAMA_HOST: ci.invalid
+          VITE_NAKAMA_SERVER_KEY: ci
+          VITE_VERIFIER_URL: https://ci.invalid
+          VITE_THIRDWEB_CLIENT_ID: ci
+
+      # Reported, not enforced (TRD-SEC-008). The dashboard imports only
+      # `thirdweb/wallets/in-app`, and the advisories in that dependency tree
+      # are in wallet connectors this product never loads — but they still have
+      # to be visible, so an advisory that *does* reach us is not lost in a
+      # list nobody reads.
+      - name: dependency advisories
+        run: npm audit --audit-level=high || true
+
+      - name: secret scan
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

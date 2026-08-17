@@ -1,0 +1,29 @@
+<!doctype html>
+<!-- lang is `id`: Indonesian is the source locale, not a translation (ADR-010). -->
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lenterra — Dasbor Guru</title>
+    <meta name="description" content="Dasbor guru Lenterra: kemajuan kelas per kemampuan." />
+    <!-- Never indexed: every route behind it needs a teacher session. -->
+    <meta name="robots" content="noindex" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <!--
+      The one thing that must render without JavaScript. A school laptop with a
+      browser too old to run the bundle otherwise shows a blank page, and the
+      teacher has no way to tell that apart from the product being broken
+      (TRD-TCH-004).
+    -->
+    <noscript>
+      <p style="font-family: system-ui; padding: 2rem; max-width: 40rem">
+        Dasbor ini membutuhkan JavaScript. Jika halaman tetap kosong setelah
+        JavaScript diaktifkan, peramban di komputer ini mungkin terlalu lama —
+        coba Chrome, Edge, atau Firefox versi terbaru.
+      </p>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

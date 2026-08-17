@@ -1,0 +1,75 @@
+/*
+ * Design tokens, shared in value with the app's `src/ui/tokens.ts`.
+ *
+ * Duplicated as CSS variables rather than imported, because the app's tokens
+ * are a TypeScript module for React Native's style objects and this is a
+ * stylesheet. The values are the contract; a divergence is a bug, and the
+ * comment above each group says where the original lives.
+ */
+
+:root {
+  /* palette — mirrors lenterra-app/src/ui/tokens.ts */
+  --canvas: #F6F7F9;
+  --surface: #FFFFFF;
+  --ink-900: #12151A;
+  --ink-700: #3C4453;
+  --ink-500: #6B7484;
+  --ink-100: #E4E7EC;
+  --ink-050: #F2F4F7;
+  --blue-600: #2E8DE1;
+  --blue-100: #D6E9FB;
+  --orange-600: #ED5B3A;
+  --orange-100: #FDE2DA;
+  --success-600: #1E874B;
+  --warning-600: #B25E02;
+  --danger-600: #C0392B;
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 24px;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* A comfortable target on a trackpad; the app's 48px floor is for thumbs. */
+  --touch: 36px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink-900);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+button {
+  font: inherit;
+}
+
+/* Focus is never removed, only restyled. A teacher navigating this by keyboard
+   in a hurry needs to see where they are. */
+:focus-visible {
+  outline: 2px solid var(--blue-600);
+  outline-offset: 2px;
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+
+  /* Navigation, buttons and polling indicators are noise on paper. */
+  [data-print='hide'] {
+    display: none !important;
+  }
+}

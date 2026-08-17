@@ -1,0 +1,78 @@
+# Build and publish the dashboard (and, later, the public site) to GitHub Pages.
+#
+# Configuration is injected at build time, never committed (TRD-CICD-006). The
+# Nakama server key is not a secret in the usual sense — every client holds it —
+# but it is still injected, so pointing at staging is a variable rather than a
+# source edit somebody forgets to revert.
+
+name: deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# A deploy in flight is never cancelled: the half-published state of a Pages
+# site is worse than a slightly stale one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+
+      - name: typecheck
+        run: npm run typecheck
+
+      - name: tests
+        run: npm run test:dashboard
+
+      # The budget check lives inside `build`, so an over-budget bundle fails
+      # here rather than being noticed by a teacher on a slow connection.
+      - name: build
+        run: npm run build:dashboard
+        env:
+          VITE_NAKAMA_HOST: ${{ vars.NAKAMA_HOST }}
+          VITE_NAKAMA_PORT: ${{ vars.NAKAMA_PORT }}
+          VITE_NAKAMA_SERVER_KEY: ${{ vars.NAKAMA_SERVER_KEY }}
+          VITE_NAKAMA_USE_SSL: 'true'
+          VITE_VERIFIER_URL: ${{ vars.VERIFIER_URL }}
+          VITE_THIRDWEB_CLIENT_ID: ${{ vars.THIRDWEB_CLIENT_ID }}
+          VITE_BUILD_VERSION: ${{ github.sha }}
+
+      - name: assemble the site
+        run: |
+          mkdir -p _site/dashboard
+          cp -r dashboard/dist/* _site/dashboard/
+          # A 404 that loads the dashboard keeps deep links working on Pages,
+          # which serves static files with no rewrite rule.
+          cp dashboard/dist/index.html _site/404.html
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

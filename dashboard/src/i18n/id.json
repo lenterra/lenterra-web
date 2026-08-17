@@ -1,0 +1,135 @@
+{
+  "common": {
+    "loading": "Memuat…",
+    "retry": "Coba lagi",
+    "back": "Kembali",
+    "cancel": "Batal",
+    "save": "Simpan",
+    "updatedAt": "Diperbarui {{time}}",
+    "staleSince": "Data terakhir {{time}} — koneksi terputus",
+    "unsyncedWarning": "{{count}} siswa punya hasil yang belum terkirim. Gambaran ini belum lengkap.",
+    "print": "Cetak",
+    "signOut": "Keluar",
+    "of": "dari"
+  },
+  "nav": {
+    "classes": "Kelas",
+    "settings": "Pengaturan"
+  },
+  "auth": {
+    "title": "Masuk sebagai guru",
+    "emailLabel": "Alamat email",
+    "codeLabel": "Kode dari email",
+    "sendCode": "Kirim kode",
+    "verify": "Masuk",
+    "sending": "Mengirim…",
+    "notATeacher": "Akun ini bukan akun guru. Hubungi admin sekolah.",
+    "failed": "Tidak bisa masuk. Periksa koneksi lalu coba lagi."
+  },
+  "classes": {
+    "title": "Kelas Anda",
+    "create": "Buat kelas",
+    "empty": "Belum ada kelas",
+    "emptyBody": "Buat satu kelas, lalu bagikan kodenya ke siswa.",
+    "name": "Nama kelas",
+    "level": "Tingkat",
+    "students": "{{count}} siswa",
+    "joinCode": "Kode gabung",
+    "created": "Kelas dibuat"
+  },
+  "classView": {
+    "participation": "Keikutsertaan",
+    "active": "Aktif minggu ini",
+    "enrolled": "Terdaftar",
+    "medianAttempts": "Median misi",
+    "medianMinutes": "Median menit",
+    "gapsTitle": "Yang paling perlu diajarkan",
+    "attentionTitle": "Perlu perhatian",
+    "heatmapTitle": "Kemampuan per siswa",
+    "rosterTitle": "Daftar siswa",
+    "gapLine": "{{below}} dari {{total}} siswa belum cakap",
+    "suggestedMissions": "Misi yang membantu",
+    "noGaps": "Belum ada pola yang menonjol.",
+    "noAttention": "Tidak ada yang perlu perhatian khusus sekarang."
+  },
+  "attention": {
+    "repeated_struggle": "{{name}} gagal berulang di {{skill}}",
+    "activity_drop": "{{name}} jauh berkurang aktivitasnya",
+    "stalled": "{{name}} tidak maju di {{skill}}",
+    "never_started": "{{name}} belum mulai",
+    "assign_mission": "Beri misi",
+    "assign_lesson": "Beri pelajaran",
+    "talk": "Ajak bicara"
+  },
+  "heatmap": {
+    "student": "Siswa",
+    "caption": "{{students}} siswa × {{skills}} kemampuan",
+    "cell": "{{student}}, {{skill}}: {{band}}, {{count}} bukti",
+    "noStudents": "Belum ada siswa di kelas ini.",
+    "noEvidence": "Belum ada bukti. Grid muncul setelah siswa main.",
+    "legend": "B = baru, S = sedang, C = cakap, M = mahir"
+  },
+  "band": {
+    "not_started": "Belum mulai",
+    "emerging": "Baru berkembang",
+    "developing": "Sedang berkembang",
+    "proficient": "Cakap",
+    "mastered": "Mahir"
+  },
+  "student": {
+    "title": "Ringkasan siswa",
+    "evidence": "Bukti lengkap",
+    "recent": "Misi terakhir",
+    "struggles": "Kesulitan",
+    "points": "Poin",
+    "streak": "Runtutan hari",
+    "lastActive": "Terakhir aktif",
+    "never": "Belum pernah",
+    "offline": "dimainkan luring",
+    "hintUsed": "pakai petunjuk",
+    "assign": "Beri tugas",
+    "noEvidence": "Belum ada bukti untuk kemampuan ini."
+  },
+  "roster": {
+    "name": "Nama",
+    "joined": "Bergabung",
+    "lastActive": "Terakhir aktif",
+    "attempts": "Misi",
+    "remove": "Keluarkan",
+    "removeConfirm": "Keluarkan {{name}} dari kelas ini?",
+    "waiting": "Menunggu siswa bergabung…",
+    "reclaims": "Permintaan ambil alih akun",
+    "approve": "Setujui",
+    "reject": "Tolak"
+  },
+  "error": {
+    "generic": "Ada yang tidak beres.",
+    "forbidden": "Anda tidak punya akses ke kelas ini.",
+    "offline": "Tidak ada koneksi."
+  },
+  "skill": {
+    "comp": {
+      "counting": "Berhitung",
+      "arithmetic": "Aritmetika",
+      "estimation": "Memperkirakan",
+      "modular": "Putaran dan sisa"
+    },
+    "algo": {
+      "sequencing": "Urutan langkah",
+      "iteration": "Pengulangan",
+      "branching": "Percabangan",
+      "state-eval": "Membaca posisi",
+      "lookahead": "Berpikir ke depan",
+      "greedy": "Menahan langkah menggoda",
+      "optimization": "Mencari langkah terbaik"
+    },
+    "sec": {
+      "assets": "Aset berharga",
+      "threats": "Mengenali ancaman",
+      "access": "Hak akses",
+      "defense": "Pertahanan",
+      "risk": "Menimbang risiko",
+      "response": "Respons serangan"
+    }
+  }
+}

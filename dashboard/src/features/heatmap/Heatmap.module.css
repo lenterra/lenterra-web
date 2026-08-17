@@ -1,0 +1,149 @@
+/*
+ * The heatmap grid.
+ *
+ * The print block at the bottom is not an afterthought: a teacher with an
+ * unreliable connection and a staff meeting prints this, and browsers drop
+ * background colours by default when printing. Without the pattern fallback
+ * every cell would print identically white.
+ */
+
+.scroller {
+  overflow-x: auto;
+  /* The grid can be wider than a laptop screen. Only this scrolls; the page
+     itself never scrolls sideways. */
+  max-width: 100%;
+}
+
+.table {
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.caption {
+  text-align: left;
+  padding-bottom: var(--space-sm);
+  color: var(--ink-500);
+  font-size: 0.8125rem;
+}
+
+.corner,
+.studentHead {
+  position: sticky;
+  left: 0;
+  background: var(--surface);
+  text-align: left;
+  font-weight: 600;
+  padding: var(--space-xs) var(--space-sm);
+  border-bottom: 1px solid var(--ink-100);
+  /* The name column stays visible while the skills scroll — otherwise a
+     teacher scrolled to the right is reading an anonymous grid. */
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.studentButton {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: var(--blue-600);
+  cursor: pointer;
+  text-align: left;
+}
+
+.studentButton:hover,
+.studentButton:focus-visible {
+  text-decoration: underline;
+}
+
+.nodeHead {
+  padding: var(--space-xs);
+  border-bottom: 1px solid var(--ink-100);
+  vertical-align: bottom;
+  height: 8rem;
+}
+
+.nodeLabel {
+  display: block;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-weight: 500;
+  color: var(--ink-700);
+  white-space: nowrap;
+}
+
+.cell {
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  border: 1px solid var(--surface);
+  font-weight: 700;
+  color: var(--ink-900);
+}
+
+.letter {
+  font-size: 0.75rem;
+}
+
+.thin {
+  color: var(--warning-600);
+  font-size: 0.75rem;
+  vertical-align: super;
+}
+
+/* Colour reinforces the letter; it never carries the meaning alone. */
+.not_started { background: var(--ink-050); color: var(--ink-500); }
+.emerging    { background: #FDE2E1; }
+.developing  { background: #FDEAC8; }
+.proficient  { background: #D6E9FB; }
+.mastered    { background: #CDEFD9; }
+
+.empty {
+  color: var(--ink-500);
+  padding: var(--space-lg) 0;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media print {
+  .scroller {
+    overflow: visible;
+  }
+
+  .table {
+    font-size: 0.75rem;
+  }
+
+  /* Browsers drop background colours when printing, so the bands are carried
+     by border weight and the letter instead. Greyscale on A4 stays legible. */
+  .cell {
+    background: none !important;
+    border: 1px solid #999;
+  }
+
+  .not_started { color: #999; }
+  .emerging    { border-left-width: 1px; }
+  .developing  { border-left-width: 3px; }
+  .proficient  { border-left-width: 5px; }
+  .mastered    { border-left-width: 5px; border-left-style: double; }
+
+  .studentButton {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .corner,
+  .studentHead {
+    position: static;
+  }
+}

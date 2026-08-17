@@ -1,0 +1,36 @@
+{
+  "name": "@lenterra/dashboard",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build && node scripts/budget.mjs",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "budget": "node scripts/budget.mjs"
+  },
+  "dependencies": {
+    "@heroiclabs/nakama-js": "^2.7.0",
+    "@tanstack/react-query": "^5.101.4",
+    "i18next": "^23.16.8",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-i18next": "^15.7.4",
+    "react-router-dom": "^7.18.2",
+    "thirdweb": "^5.121.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^5.0.0",
+    "jsdom": "^25.0.1",
+    "typescript": "~5.6.3",
+    "vite": "^8.2.1",
+    "vitest": "^4.1.10"
+  }
+}

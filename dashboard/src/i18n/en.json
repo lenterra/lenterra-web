@@ -1,0 +1,135 @@
+{
+  "common": {
+    "loading": "Loading…",
+    "retry": "Try again",
+    "back": "Back",
+    "cancel": "Cancel",
+    "save": "Save",
+    "updatedAt": "Updated {{time}}",
+    "staleSince": "Last updated {{time}} — connection lost",
+    "unsyncedWarning": "{{count}} students have results that have not arrived yet. This picture is incomplete.",
+    "print": "Print",
+    "signOut": "Sign out",
+    "of": "of"
+  },
+  "nav": {
+    "classes": "Classes",
+    "settings": "Settings"
+  },
+  "auth": {
+    "title": "Teacher sign-in",
+    "emailLabel": "Email address",
+    "codeLabel": "Code from your email",
+    "sendCode": "Send code",
+    "verify": "Sign in",
+    "sending": "Sending…",
+    "notATeacher": "This is not a teacher account. Ask your school admin.",
+    "failed": "Could not sign in. Check the connection and try again."
+  },
+  "classes": {
+    "title": "Your classes",
+    "create": "Create a class",
+    "empty": "No classes yet",
+    "emptyBody": "Create one class, then share the code with your students.",
+    "name": "Class name",
+    "level": "Level",
+    "students": "{{count}} students",
+    "joinCode": "Join code",
+    "created": "Class created"
+  },
+  "classView": {
+    "participation": "Participation",
+    "active": "Active this week",
+    "enrolled": "Enrolled",
+    "medianAttempts": "Median missions",
+    "medianMinutes": "Median minutes",
+    "gapsTitle": "Most worth teaching next",
+    "attentionTitle": "Needs attention",
+    "heatmapTitle": "Skills by student",
+    "rosterTitle": "Students",
+    "gapLine": "{{below}} of {{total}} students not yet proficient",
+    "suggestedMissions": "Missions that help",
+    "noGaps": "No clear pattern yet.",
+    "noAttention": "Nobody needs particular attention right now."
+  },
+  "attention": {
+    "repeated_struggle": "{{name}} keeps failing on {{skill}}",
+    "activity_drop": "{{name}} has dropped off sharply",
+    "stalled": "{{name}} is not progressing on {{skill}}",
+    "never_started": "{{name}} has not started",
+    "assign_mission": "Assign a mission",
+    "assign_lesson": "Assign a lesson",
+    "talk": "Have a word"
+  },
+  "heatmap": {
+    "student": "Student",
+    "caption": "{{students}} students × {{skills}} skills",
+    "cell": "{{student}}, {{skill}}: {{band}}, {{count}} pieces of evidence",
+    "noStudents": "No students in this class yet.",
+    "noEvidence": "No evidence yet. The grid appears once students play.",
+    "legend": "B = emerging, S = developing, C = proficient, M = mastered"
+  },
+  "band": {
+    "not_started": "Not started",
+    "emerging": "Emerging",
+    "developing": "Developing",
+    "proficient": "Proficient",
+    "mastered": "Mastered"
+  },
+  "student": {
+    "title": "Student summary",
+    "evidence": "Full evidence",
+    "recent": "Recent missions",
+    "struggles": "Struggles",
+    "points": "Points",
+    "streak": "Day streak",
+    "lastActive": "Last active",
+    "never": "Never",
+    "offline": "played offline",
+    "hintUsed": "used a hint",
+    "assign": "Assign work",
+    "noEvidence": "No evidence for this skill yet."
+  },
+  "roster": {
+    "name": "Name",
+    "joined": "Joined",
+    "lastActive": "Last active",
+    "attempts": "Missions",
+    "remove": "Remove",
+    "removeConfirm": "Remove {{name}} from this class?",
+    "waiting": "Waiting for students to join…",
+    "reclaims": "Account reclaim requests",
+    "approve": "Approve",
+    "reject": "Reject"
+  },
+  "error": {
+    "generic": "Something went wrong.",
+    "forbidden": "You do not have access to this class.",
+    "offline": "No connection."
+  },
+  "skill": {
+    "comp": {
+      "counting": "Counting",
+      "arithmetic": "Arithmetic",
+      "estimation": "Estimation",
+      "modular": "Cycles and remainders"
+    },
+    "algo": {
+      "sequencing": "Sequencing",
+      "iteration": "Repetition",
+      "branching": "Branching",
+      "state-eval": "Reading the position",
+      "lookahead": "Thinking ahead",
+      "greedy": "Resisting the obvious move",
+      "optimization": "Finding the best move"
+    },
+    "sec": {
+      "assets": "Assets worth protecting",
+      "threats": "Spotting threats",
+      "access": "Access control",
+      "defense": "Defence",
+      "risk": "Weighing risk",
+      "response": "Incident response"
+    }
+  }
+}
