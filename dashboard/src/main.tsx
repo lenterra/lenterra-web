@@ -22,6 +22,10 @@ const Classes = lazy(() => import('./routes/classes'));
 const ClassView = lazy(() => import('./routes/class'));
 const StudentView = lazy(() => import('./routes/student'));
 const SignIn = lazy(() => import('./routes/signin'));
+// Lazy like the rest, which matters more here: a teacher never opens either of
+// these, and neither belongs in the bundle they wait for.
+const Moderation = lazy(() => import('./routes/moderation'));
+const Admin = lazy(() => import('./routes/admin'));
 
 /**
  * Hash routing.
@@ -40,6 +44,8 @@ const router = createHashRouter([
       { path: 'class/:classId', element: <ClassView /> },
       { path: 'class/:classId/student/:userId', element: <StudentView /> },
       { path: 'signin', element: <SignIn /> },
+      { path: 'moderation', element: <Moderation /> },
+      { path: 'admin', element: <Admin /> },
     ],
   },
 ]);

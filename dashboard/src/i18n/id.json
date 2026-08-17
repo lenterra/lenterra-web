@@ -14,7 +14,9 @@
   },
   "nav": {
     "classes": "Kelas",
-    "settings": "Pengaturan"
+    "settings": "Pengaturan",
+    "moderation": "Laporan",
+    "admin": "Administrasi"
   },
   "auth": {
     "title": "Masuk sebagai guru",
@@ -146,5 +148,77 @@
     "recordedTitle": "Persetujuan sekolah sudah dicatat",
     "recordedOn": "Dicatat pada {{date}}",
     "unknownDate": "tanggal tidak diketahui"
+  },
+  "assign": {
+    "action": "Tugaskan",
+    "toClass": "Tugaskan ke kelas",
+    "toStudent": "Tugaskan ke {{name}}",
+    "sending": "Menugaskan…",
+    "doneClass": "Ditugaskan ke {{count}} siswa",
+    "doneOne": "Sudah ditugaskan",
+    "failed": "Tidak bisa menugaskan. Coba lagi.",
+    "deliveryNote": "Sampai di HP siswa saat perangkatnya tersinkron berikutnya."
+  },
+  "settings": {
+    "title": "Pengaturan kelas",
+    "leaderboard": "Tampilkan papan peringkat kelas",
+    "leaderboardHelp": "Peringkat memacu siswa di atas dan menyurutkan siswa di bawah. Hanya Anda yang tahu kelas ini termasuk yang mana.",
+    "withdrawTitle": "Tarik persetujuan sekolah",
+    "withdrawHelp": "Menghentikan pengumpulan data untuk semua kelas di sekolah ini. Data yang sudah ada tetap tersimpan dan dihapus lewat proses terpisah.",
+    "withdrawWord": "TARIK",
+    "withdrawConfirmLabel": "Ketik {{word}} untuk mengonfirmasi",
+    "withdrawConfirm": "Tarik persetujuan",
+    "withdrawDone": "Persetujuan ditarik. Tidak ada data baru yang dikumpulkan."
+  },
+  "moderation": {
+    "title": "Laporan",
+    "overdue": "{{count}} laporan lebih dari 72 jam",
+    "emptyTitle": "Tidak ada yang menunggu",
+    "emptyBody": "Tidak ada laporan terbuka. Ini keadaan normal.",
+    "reportedAt": "Dilaporkan {{date}}",
+    "actioned": "Ditindaklanjuti",
+    "dismissed": "Tidak dilanjutkan",
+    "reason": {
+      "bullying": "Perundungan",
+      "inappropriate_name": "Nama tidak pantas",
+      "impersonation": "Menyamar sebagai orang lain",
+      "other": "Lainnya"
+    }
+  },
+  "admin": {
+    "title": "Administrasi",
+    "issueTitle": "Undang seseorang",
+    "issue": "Buat undangan",
+    "issuing": "Membuat…",
+    "issuedCode": "Kode undangan",
+    "issuedHelp": "Sekali pakai. Berikan langsung kepada orangnya — kode tidak bisa ditampilkan lagi setelah dipakai.",
+    "invitesTitle": "Undangan",
+    "noInvites": "Belum ada undangan.",
+    "code": "Kode",
+    "status": "Status",
+    "expires": "Berlaku sampai",
+    "revoke": "Batalkan",
+    "role": "Peran",
+    "roleStudent": "Siswa",
+    "roleTeacher": "Guru",
+    "roleSchoolAdmin": "Admin sekolah",
+    "roleStaff": "Staf platform",
+    "statusOpen": "Terbuka",
+    "statusRedeemed": "Terpakai",
+    "statusRevoked": "Dibatalkan",
+    "statusExpired": "Kedaluwarsa",
+    "transfersFrom": "Pindahkan dari akun (opsional)",
+    "transfersFromPlaceholder": "Id akun",
+    "transfersFromHelp": "Untuk guru yang kehilangan akses. Kelas dan perannya pindah ke pemakai kode ini, dan akun lama menjadi akun siswa.",
+    "grantTitle": "Ubah peran langsung",
+    "grantHelp": "Melewati jalur undangan. Untuk memperbaiki kekeliruan, bukan untuk mendaftarkan orang baru.",
+    "userId": "Id akun",
+    "grant": "Ubah peran",
+    "granted": "Peran diubah menjadi {{role}}.",
+    "retentionTitle": "Retensi data",
+    "retentionHelp": "Menghapus akun yang permintaan penghapusannya sudah lewat tiga puluh hari, dan membersihkan catatan masuk serta batas laju yang kedaluwarsa.",
+    "purge": "Jalankan retensi sekarang",
+    "purging": "Menjalankan…",
+    "purged": "{{accounts}} akun dihapus, {{rows}} catatan kedaluwarsa dibersihkan."
   }
 }

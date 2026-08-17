@@ -18,7 +18,10 @@ import { useTranslation } from 'react-i18next';
 import { isForbidden, useAttention, useClassSummary, useRoster } from '../data/queries';
 import { Heatmap } from '../features/heatmap/Heatmap';
 import { Attention } from '../features/attention/Attention';
+import { AssignButton } from '../features/assign/Assign';
+import { ClassSettings } from '../features/settings/ClassSettings';
 import { Roster } from '../features/roster/Roster';
+import { useRole } from '../ui/Shell';
 import { Empty, ErrorPanel, Freshness, Loading, UnsyncedNotice } from '../ui/State';
 import styles from './class.module.css';
 
@@ -27,6 +30,7 @@ export default function ClassRoute() {
   const navigate = useNavigate();
   const { classId = null } = useParams();
   const [liveRoster, setLiveRoster] = useState(false);
+  const role = useRole();
 
   const summary = useClassSummary(classId);
   const attention = useAttention(classId);
@@ -99,6 +103,24 @@ export default function ClassRoute() {
                         {t('classView.suggestedMissions')}: {gap.suggestedMissionIds.join(', ')}
                       </p>
                     ) : null}
+
+                    {/*
+                      The gap and the thing to do about it, in one place. A
+                      teacher reading "four students are below proficient here"
+                      has about a minute; making them navigate elsewhere to act
+                      on it is how a good suggestion goes unused.
+                    */}
+                    {classId && (gap.suggestedLessonId ?? gap.suggestedMissionIds[0]) ? (
+                      <AssignButton
+                        classId={classId}
+                        target={
+                          gap.suggestedLessonId
+                            ? { kind: 'lesson', targetId: gap.suggestedLessonId }
+                            : { kind: 'mission', targetId: gap.suggestedMissionIds[0] as string }
+                        }
+                        label={t('assign.toClass')}
+                      />
+                    ) : null}
                   </details>
                 ) : null}
               </li>
@@ -110,6 +132,7 @@ export default function ClassRoute() {
       <section className={styles.section}>
         <h2>{t('classView.attentionTitle')}</h2>
         <Attention
+          classId={classId ?? ''}
           list={attention.data}
           onSelect={(userId) => navigate(`/class/${classId}/student/${userId}`)}
         />
@@ -151,6 +174,8 @@ export default function ClassRoute() {
         <Stat label={t('classView.medianAttempts')} value={data.participation.medianAttempts} />
         <Stat label={t('classView.medianMinutes')} value={data.participation.medianMinutes} />
       </section>
+
+      {classId ? <ClassSettings classId={classId} role={role} /> : null}
     </div>
   );
 }

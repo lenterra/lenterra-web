@@ -1,0 +1,41 @@
+.page { display: grid; gap: var(--space-lg); }
+
+/* Stated, not styled as an alarm. A missed commitment needs to be read, and a
+   red banner at the top of every visit stops being read within a week. */
+.overdue {
+  margin: 0;
+  padding: var(--space-md);
+  border-left: 4px solid var(--warning-600);
+  background: var(--warning-100);
+  color: var(--ink-900);
+  border-radius: var(--radius-sm);
+}
+
+.list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-md); }
+.item {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  justify-content: space-between;
+  align-items: center;
+}
+.what { display: grid; gap: var(--space-xs); }
+.reason { color: var(--ink-900); font-weight: 600; }
+.when { color: var(--ink-500); font-size: 0.875rem; }
+
+.actions { display: flex; gap: var(--space-sm); }
+.action,
+.dismiss {
+  min-height: var(--touch);
+  padding: 0 var(--space-lg);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: 0.9375rem;
+}
+.action { border: 1px solid var(--blue-700); background: var(--surface); color: var(--blue-700); }
+.dismiss { border: 1px solid var(--ink-100); background: var(--surface); color: var(--ink-700); }
+.action:disabled,
+.dismiss:disabled { opacity: 0.6; cursor: default; }

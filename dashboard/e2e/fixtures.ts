@@ -217,6 +217,24 @@ const DEFAULTS: Handlers = {
  * HTTP failure — which is the distinction the dashboard's retry rules turn on,
  * and getting it wrong here would test the wrong path.
  */
+/**
+ * Unwrap what Nakama's HTTP RPC actually puts on the wire.
+ *
+ * The body is a JSON-encoded *string* containing the JSON payload, so one parse
+ * yields a string and the second yields the object. Parsing once left every
+ * field `undefined` — which no test noticed, because the only assertion against
+ * a request body belonged to a test that was skipped.
+ */
+function decodePayload(raw: string | null): unknown {
+  if (!raw) return {};
+  try {
+    const once = JSON.parse(raw);
+    return typeof once === 'string' ? JSON.parse(once) : once;
+  } catch {
+    return {};
+  }
+}
+
 export async function mockRpc(page: Page, overrides: Handlers = {}): Promise<string[]> {
   const handlers = { ...DEFAULTS, ...overrides };
   const called: string[] = [];
@@ -241,8 +259,9 @@ export async function mockRpc(page: Page, overrides: Handlers = {}): Promise<str
 
     let body: unknown = handler;
     if (typeof handler === 'function') {
-      const raw = route.request().postData() ?? '{}';
-      body = (handler as (payload: unknown) => unknown)(JSON.parse(raw));
+      body = (handler as (payload: unknown) => unknown)(
+        decodePayload(route.request().postData()),
+      );
     }
 
     const envelope =

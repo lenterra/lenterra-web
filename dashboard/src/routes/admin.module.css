@@ -1,0 +1,79 @@
+.page { display: grid; gap: var(--space-xl); }
+
+.section {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  display: grid;
+  gap: var(--space-md);
+}
+
+.form { display: grid; gap: var(--space-md); max-width: 32rem; }
+.field { display: grid; gap: var(--space-xs); font-size: 0.875rem; color: var(--ink-700); }
+.field input,
+.field select {
+  min-height: var(--touch);
+  padding: 0 var(--space-md);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+}
+
+.help { color: var(--ink-500); font-size: 0.875rem; margin: 0; }
+.muted { color: var(--ink-500); margin: 0; }
+.ok { color: var(--success-600); margin: 0; }
+
+.submit {
+  justify-self: start;
+  min-height: var(--touch);
+  padding: 0 var(--space-lg);
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--blue-700);
+  color: #fff;
+  cursor: pointer;
+}
+.submit:disabled { opacity: 0.6; cursor: default; }
+
+/* The code is the whole secret and cannot be recovered once spent, so it is
+   set large enough to read across a desk and to copy without transcribing. */
+.issued {
+  display: grid;
+  gap: var(--space-xs);
+  padding: var(--space-md);
+  border: 1px solid var(--blue-100);
+  border-radius: var(--radius-md);
+  background: var(--blue-100);
+}
+.issuedLabel { color: var(--ink-700); font-size: 0.875rem; }
+.code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 1.5rem;
+  letter-spacing: 0.15em;
+  color: var(--ink-900);
+  user-select: all;
+}
+
+/* Wide content scrolls inside its own box rather than the page. */
+.tableWrap { overflow-x: auto; }
+.table { border-collapse: collapse; width: 100%; min-width: 34rem; }
+.table th,
+.table td {
+  text-align: left;
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--ink-100);
+  font-size: 0.9375rem;
+}
+.table th { color: var(--ink-500); font-weight: 600; }
+.table code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.08em; }
+
+.revoke {
+  min-height: var(--touch);
+  padding: 0 var(--space-md);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--danger-600);
+  cursor: pointer;
+}
+.revoke:disabled { opacity: 0.6; cursor: default; }

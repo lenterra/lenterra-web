@@ -18,6 +18,7 @@ import { expect, test } from '@playwright/test';
 
 import {
   ATTENTION,
+  BOOTSTRAP,
   CLASS_ID,
   CONSENT_ABSENT,
   ROSTER,
@@ -191,25 +192,101 @@ test('a mastery value is never shown without the evidence behind it', async ({ p
 });
 
 test('a teacher assigning work sends it for the class they are looking at', async ({ page }) => {
+  // The assign button lives inside the gap disclosure, because that is where a
+  // teacher is when they decide to act: they have just read that four students
+  // are below proficient on modular arithmetic and what to do about it.
   const assignments: unknown[] = [];
   await mockRpc(page, {
     'v1.teacher.assignment.create': (payload: unknown) => {
       assignments.push(payload);
-      return { assignmentId: 'assignment-1' };
+      return { assignmentId: 'assignment-1', notifiedStudents: 6 };
     },
   });
 
   await page.goto(`/#/class/${CLASS_ID}`);
 
-  const assign = page.getByRole('button', { name: /tugaskan|assign/i }).first();
-  if ((await assign.count()) === 0) {
-    test.skip(true, 'no assign affordance on this surface yet');
-    return;
-  }
+  const teaching = page.locator('details', { hasText: /mengajar|teach/i }).first();
+  await teaching.locator('summary').click();
+  await teaching.getByRole('button', { name: /tugaskan ke kelas|assign to the class/i }).click();
 
-  await assign.click();
   await expect.poll(() => assignments.length, { timeout: 10_000 }).toBeGreaterThan(0);
-  expect((assignments[0] as { classId: string }).classId).toBe(CLASS_ID);
+
+  const sent = assignments[0] as { classId: string; kind: string; targetId: string };
+  expect(sent.classId).toBe(CLASS_ID);
+  // The gap's own suggestion, not something the teacher had to know the id of.
+  expect(sent.targetId).toBe(SUMMARY.gaps[0]!.suggestedLessonId);
+  expect(sent.kind).toBe('lesson');
+});
+
+test('an assignment says how many students it reached', async ({ page }) => {
+  // "Assigned" leaves a teacher wondering whether the students who have not
+  // synced this week are included. A count does not.
+  await mockRpc(page, {
+    'v1.teacher.assignment.create': { assignmentId: 'assignment-1', notifiedStudents: 6 },
+  });
+
+  await page.goto(`/#/class/${CLASS_ID}`);
+
+  const teaching = page.locator('details', { hasText: /mengajar|teach/i }).first();
+  await teaching.locator('summary').click();
+  await teaching.getByRole('button', { name: /tugaskan ke kelas|assign to the class/i }).click();
+
+  await expect(page.getByText(/6/).first()).toBeVisible();
+});
+
+test('the leaderboard can be turned off for a class', async ({ page }) => {
+  // A ranking motivates the top of a class and discourages the bottom of one.
+  // Until now this could only be changed by editing the database.
+  const calls: unknown[] = [];
+  await mockRpc(page, {
+    'v1.teacher.leaderboard.set': (payload: unknown) => {
+      calls.push(payload);
+      return { enabled: false };
+    },
+  });
+
+  await page.goto(`/#/class/${CLASS_ID}`);
+
+  const settings = page.locator('details', { hasText: /pengaturan kelas|class settings/i }).first();
+  await settings.locator('summary').click();
+  await settings.getByRole('checkbox').first().click();
+
+  await expect.poll(() => calls.length, { timeout: 10_000 }).toBeGreaterThan(0);
+  expect((calls[0] as { classId: string }).classId).toBe(CLASS_ID);
+});
+
+test('withdrawing consent is offered only to an administrator, and needs typing to confirm', async ({
+  page,
+}) => {
+  // It stops collection for every class in the school. A mis-click on a
+  // settings panel must not be able to end a pilot for four hundred students.
+  await mockRpc(page, {
+    'v1.session.bootstrap': {
+      profile: { ...BOOTSTRAP.profile, role: 'school_admin' },
+    },
+  });
+
+  await page.goto(`/#/class/${CLASS_ID}`);
+
+  const settings = page.locator('details', { hasText: /pengaturan kelas|class settings/i }).first();
+  await settings.locator('summary').click();
+  await settings.getByRole('button', { name: /tarik persetujuan|withdraw/i }).first().click();
+
+  const confirm = settings.getByRole('button', { name: /tarik persetujuan|withdraw consent/i });
+  await expect(confirm).toBeDisabled();
+
+  await settings.getByRole('textbox').fill('TARIK');
+  await expect(confirm).toBeEnabled();
+});
+
+test('a plain teacher is not offered consent withdrawal', async ({ page }) => {
+  await mockRpc(page);
+  await page.goto(`/#/class/${CLASS_ID}`);
+
+  const settings = page.locator('details', { hasText: /pengaturan kelas|class settings/i }).first();
+  await settings.locator('summary').click();
+
+  await expect(settings.getByText(/tarik persetujuan|withdraw/i)).toHaveCount(0);
 });
 
 test('a refused read shows a refusal, not a spinner', async ({ page }) => {

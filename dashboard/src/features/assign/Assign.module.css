@@ -1,0 +1,17 @@
+.wrap { display: grid; gap: var(--space-xs); justify-items: start; }
+
+.button {
+  min-height: var(--touch);
+  padding: 0 var(--space-md);
+  border: 1px solid var(--blue-700);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--blue-700);
+  font-size: 0.9375rem;
+  cursor: pointer;
+}
+.button:disabled { opacity: 0.6; cursor: default; }
+
+.done { color: var(--success-600); font-size: 0.875rem; margin: 0; }
+.error { color: var(--danger-600); font-size: 0.875rem; margin: 0; }
+.caveat { color: var(--ink-500); font-size: 0.8125rem; margin: 0; }

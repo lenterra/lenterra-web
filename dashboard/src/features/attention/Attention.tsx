@@ -13,12 +13,15 @@
 import { useTranslation } from 'react-i18next';
 
 import type { AttentionList } from '../../data/queries';
+import { AssignButton } from '../assign/Assign';
 import styles from './Attention.module.css';
 
 export function Attention({
+  classId,
   list,
   onSelect,
 }: {
+  classId: string;
   list: AttentionList | undefined;
   onSelect: (userId: string) => void;
 }) {
@@ -52,6 +55,25 @@ export function Attention({
               {t(`attention.${student.suggestedAction.kind}`)}
             </span>
           </button>
+
+          {/*
+            The suggested action, made doable. Where the suggestion is "talk to
+            them" there is nothing to assign and no button appears — a dashboard
+            that offered work in place of a conversation would be answering a
+            different question than the one it asked.
+          */}
+          {student.suggestedAction.targetId &&
+          student.suggestedAction.kind !== 'talk' ? (
+            <AssignButton
+              classId={classId}
+              target={{
+                kind: student.suggestedAction.kind === 'assign_lesson' ? 'lesson' : 'mission',
+                targetId: student.suggestedAction.targetId,
+                userId: student.userId,
+              }}
+              label={t('assign.toStudent', { name: student.displayName })}
+            />
+          ) : null}
         </li>
       ))}
     </ul>

@@ -18,7 +18,7 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
 
-import { CLASS_ID, CONSENT_ABSENT, STUDENT_ID, mockRpc, signedIn } from './fixtures';
+import { BOOTSTRAP, CLASS_ID, CONSENT_ABSENT, STUDENT_ID, mockRpc, signedIn } from './fixtures';
 
 const BLOCKING = new Set(['serious', 'critical']);
 
@@ -56,6 +56,52 @@ test('the class list is accessible', async ({ page }) => {
   await page.goto('/#/');
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
   await audit(page, 'class list');
+});
+
+/**
+ * The two administrative pages.
+ *
+ * Held to the same gate as the teacher-facing ones. It would be easy to argue
+ * that a staff-only screen matters less; the person moderating reports for a
+ * pilot is as likely to be working from a keyboard on a borrowed laptop as any
+ * teacher, and a queue they cannot operate is a queue nobody empties.
+ */
+test('the moderation queue is accessible', async ({ page }) => {
+  await mockRpc(page, {
+    'v1.session.bootstrap': { profile: { ...BOOTSTRAP.profile, role: 'staff' } },
+    'v1.moderation.queue': {
+      items: [{ id: 'r1', reason: 'bullying', createdAt: '2026-08-10T02:00:00.000Z' }],
+      overdue: 1,
+    },
+  });
+
+  await page.goto('/#/moderation');
+  await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+  await audit(page, 'moderation');
+});
+
+test('the administration page is accessible', async ({ page }) => {
+  await mockRpc(page, {
+    'v1.session.bootstrap': { profile: { ...BOOTSTRAP.profile, role: 'staff' } },
+    'v1.admin.staff.invite.list': {
+      invites: [
+        {
+          id: 'i1',
+          code: 'HM2BT3S5T9',
+          role: 'teacher',
+          transfersFrom: null,
+          createdAt: '2026-08-16T02:00:00.000Z',
+          expiresAt: '2026-08-23T02:00:00.000Z',
+          status: 'open',
+          redeemedByName: null,
+        },
+      ],
+    },
+  });
+
+  await page.goto('/#/admin');
+  await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+  await audit(page, 'administration');
 });
 
 test('the consent gate is accessible', async ({ page }) => {

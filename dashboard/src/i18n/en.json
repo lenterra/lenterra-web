@@ -14,7 +14,9 @@
   },
   "nav": {
     "classes": "Classes",
-    "settings": "Settings"
+    "settings": "Settings",
+    "moderation": "Reports",
+    "admin": "Administration"
   },
   "auth": {
     "title": "Teacher sign-in",
@@ -146,5 +148,77 @@
     "recordedTitle": "School consent is on file",
     "recordedOn": "Recorded on {{date}}",
     "unknownDate": "an unknown date"
+  },
+  "assign": {
+    "action": "Assign",
+    "toClass": "Assign to the class",
+    "toStudent": "Assign to {{name}}",
+    "sending": "Assigning…",
+    "doneClass": "Assigned to {{count}} students",
+    "doneOne": "Assigned",
+    "failed": "Could not assign that. Try again.",
+    "deliveryNote": "Arrives on a student’s phone the next time it syncs."
+  },
+  "settings": {
+    "title": "Class settings",
+    "leaderboard": "Show the class leaderboard",
+    "leaderboardHelp": "A ranking motivates the top of a class and discourages the bottom of one. You are the only person who can judge which yours is.",
+    "withdrawTitle": "Withdraw the school’s consent",
+    "withdrawHelp": "Stops data collection for every class in this school. Existing records are kept and can be deleted separately.",
+    "withdrawWord": "WITHDRAW",
+    "withdrawConfirmLabel": "Type {{word}} to confirm",
+    "withdrawConfirm": "Withdraw consent",
+    "withdrawDone": "Consent withdrawn. No new data will be collected."
+  },
+  "moderation": {
+    "title": "Reports",
+    "overdue": "{{count}} report(s) older than 72 hours",
+    "emptyTitle": "Nothing waiting",
+    "emptyBody": "No open reports. This is the normal state.",
+    "reportedAt": "Reported {{date}}",
+    "actioned": "Actioned",
+    "dismissed": "Dismissed",
+    "reason": {
+      "bullying": "Bullying",
+      "inappropriate_name": "Inappropriate name",
+      "impersonation": "Impersonating someone",
+      "other": "Other"
+    }
+  },
+  "admin": {
+    "title": "Administration",
+    "issueTitle": "Invite someone",
+    "issue": "Create invite",
+    "issuing": "Creating…",
+    "issuedCode": "Invite code",
+    "issuedHelp": "Single-use. Give it to them directly — it cannot be shown again once redeemed.",
+    "invitesTitle": "Invites",
+    "noInvites": "No invites yet.",
+    "code": "Code",
+    "status": "Status",
+    "expires": "Expires",
+    "revoke": "Revoke",
+    "role": "Role",
+    "roleStudent": "Student",
+    "roleTeacher": "Teacher",
+    "roleSchoolAdmin": "School administrator",
+    "roleStaff": "Platform staff",
+    "statusOpen": "Open",
+    "statusRedeemed": "Used",
+    "statusRevoked": "Revoked",
+    "statusExpired": "Expired",
+    "transfersFrom": "Transfer from an account (optional)",
+    "transfersFromPlaceholder": "Account id",
+    "transfersFromHelp": "For a teacher who has lost access. Their classes and role move to whoever redeems this code, and the old account becomes a student account.",
+    "grantTitle": "Change a role directly",
+    "grantHelp": "Bypasses the invite chain. For correcting a mistake, not for onboarding.",
+    "userId": "Account id",
+    "grant": "Change role",
+    "granted": "Role changed to {{role}}.",
+    "retentionTitle": "Retention",
+    "retentionHelp": "Deletes accounts whose deletion request has passed its thirty days, and clears expired sign-in and rate-limit records.",
+    "purge": "Run retention now",
+    "purging": "Running…",
+    "purged": "{{accounts}} account(s) deleted, {{rows}} expired record(s) cleared."
   }
 }

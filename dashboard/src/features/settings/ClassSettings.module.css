@@ -1,0 +1,59 @@
+.panel {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+}
+.summary { cursor: pointer; font-weight: 600; color: var(--ink-700); }
+.body { display: grid; gap: var(--space-lg); padding-top: var(--space-lg); }
+
+.row { display: grid; grid-template-columns: auto 1fr; gap: var(--space-md); align-items: start; }
+.label { display: block; color: var(--ink-900); }
+.help { display: block; color: var(--ink-500); font-size: 0.875rem; margin-top: var(--space-xs); }
+
+/* Set apart, because what is in it stops data collection for a whole school. */
+.danger {
+  display: grid;
+  gap: var(--space-xs);
+  border-top: 1px solid var(--ink-100);
+  padding-top: var(--space-lg);
+}
+.dangerLink {
+  justify-self: start;
+  margin-top: var(--space-sm);
+  min-height: var(--touch);
+  padding: 0 var(--space-md);
+  border: 1px solid var(--danger-600);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--danger-600);
+  cursor: pointer;
+}
+.confirm { display: grid; gap: var(--space-md); margin-top: var(--space-md); }
+.field { display: grid; gap: var(--space-xs); font-size: 0.875rem; color: var(--ink-700); }
+.field input {
+  min-height: var(--touch);
+  padding: 0 var(--space-md);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+}
+.dangerButton {
+  justify-self: start;
+  min-height: var(--touch);
+  padding: 0 var(--space-lg);
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--danger-600);
+  color: #fff;
+  cursor: pointer;
+}
+.dangerButton:disabled { opacity: 0.6; cursor: default; }
+.cancel {
+  justify-self: start;
+  min-height: var(--touch);
+  border: 0;
+  background: none;
+  color: var(--ink-500);
+  cursor: pointer;
+}
+.withdrawn { color: var(--ink-700); margin: 0; }
