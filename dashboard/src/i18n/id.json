@@ -18,11 +18,13 @@
   },
   "auth": {
     "title": "Masuk sebagai guru",
-    "emailLabel": "Alamat email",
-    "codeLabel": "Kode dari email",
-    "sendCode": "Kirim kode",
+    "staffCodeLabel": "Kode undangan",
+    "codeHelp": "Masukkan kode dari admin sekolah Anda. Kode ini hanya bisa dipakai sekali.",
+    "codeInvalid": "Kode itu tidak berlaku. Mungkin sudah pernah dipakai.",
+    "codeTooManyTries": "Terlalu banyak percobaan. Coba lagi sebentar lagi.",
+    "unreachable": "Tidak bisa menghubungi layanan masuk. Periksa koneksi.",
     "verify": "Masuk",
-    "sending": "Mengirim…",
+    "sending": "Sedang masuk…",
     "notATeacher": "Akun ini bukan akun guru. Hubungi admin sekolah.",
     "failed": "Tidak bisa masuk. Periksa koneksi lalu coba lagi."
   },

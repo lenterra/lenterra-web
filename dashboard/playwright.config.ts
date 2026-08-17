@@ -56,7 +56,6 @@ export default defineConfig({
       VITE_NAKAMA_HOST: 'e2e.invalid',
       VITE_NAKAMA_SERVER_KEY: 'e2e',
       VITE_VERIFIER_URL: 'https://e2e.invalid',
-      VITE_THIRDWEB_CLIENT_ID: 'e2e',
     },
   },
 });

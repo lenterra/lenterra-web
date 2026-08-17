@@ -264,8 +264,10 @@ export async function mockRpc(page: Page, overrides: Handlers = {}): Promise<str
  * Put a signed-in teacher in the browser before the app loads.
  *
  * The token is a syntactically valid JWT with a far-future expiry and nothing
- * real in it. Signing in through thirdweb would mean driving a third party's
- * email UI in every test, which tests thirdweb rather than this dashboard.
+ * real in it. Redeeming a real staff invite would spend one per test — they
+ * are single-use by design — so the session is planted rather than earned.
+ * What the sign-in path itself does is covered where it belongs, against a
+ * verifier that can be told to fail.
  */
 export async function signedIn(page: Page): Promise<void> {
   const claims = {

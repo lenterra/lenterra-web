@@ -13,7 +13,6 @@ interface ImportMetaEnv {
   readonly VITE_NAKAMA_SERVER_KEY: string;
   readonly VITE_NAKAMA_USE_SSL?: string;
   readonly VITE_VERIFIER_URL: string;
-  readonly VITE_THIRDWEB_CLIENT_ID: string;
   readonly VITE_BUILD_VERSION?: string;
 }
 

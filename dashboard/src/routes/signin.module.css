@@ -1,4 +1,5 @@
 .page { max-width: 24rem; margin: 4rem auto; display: grid; gap: var(--space-lg); }
+.help { color: var(--ink-500); font-size: 0.9375rem; margin: 0; }
 .form {
   background: var(--surface);
   border-radius: var(--radius-lg);
@@ -12,7 +13,12 @@
   padding: 0 var(--space-md);
   border: 1px solid var(--ink-100);
   border-radius: var(--radius-md);
-  font-size: 1rem;
+  /* Tracked and tabular: an invite code is read a character at a time, off a
+     note or down a phone line, and proportional spacing makes that harder. */
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 1.125rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
 }
 .submit {
   min-height: var(--touch);

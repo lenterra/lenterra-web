@@ -31,6 +31,5 @@ export const config = {
     useSsl: (env.VITE_NAKAMA_USE_SSL ?? 'true') !== 'false',
   },
   verifierUrl: required('VITE_VERIFIER_URL', env.VITE_VERIFIER_URL),
-  thirdwebClientId: required('VITE_THIRDWEB_CLIENT_ID', env.VITE_THIRDWEB_CLIENT_ID),
   buildVersion: env.VITE_BUILD_VERSION ?? 'dev',
 } as const;

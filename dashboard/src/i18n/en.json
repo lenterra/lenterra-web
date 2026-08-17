@@ -18,11 +18,13 @@
   },
   "auth": {
     "title": "Teacher sign-in",
-    "emailLabel": "Email address",
-    "codeLabel": "Code from your email",
-    "sendCode": "Send code",
+    "staffCodeLabel": "Invite code",
+    "codeHelp": "Enter the code your school administrator gave you. It works once.",
+    "codeInvalid": "That code is not valid. It may already have been used.",
+    "codeTooManyTries": "Too many attempts. Try again shortly.",
+    "unreachable": "Could not reach the sign-in service. Check the connection.",
     "verify": "Sign in",
-    "sending": "Sending…",
+    "sending": "Signing in…",
     "notATeacher": "This is not a teacher account. Ask your school admin.",
     "failed": "Could not sign in. Check the connection and try again."
   },
