@@ -1,5 +1,5 @@
 /**
- * The class heatmap (PRD-TCH-004, TRD-TCH-007).
+ * The class heatmap (TRD-TCH-007).
  *
  * A semantic HTML table, not a canvas. Four things follow from that choice and
  * none of them work otherwise:
@@ -10,7 +10,7 @@
  *  - **A screen reader can read it.** Each cell announces student, skill and
  *    band, because the colour is not the information.
  *  - **Colour is never the only channel.** Every cell carries a letter, so it
- *    survives greyscale printing and a colour-blind reader alike (PRD-ACC-013).
+ *    survives greyscale printing and a colour-blind reader alike.
  *  - **It is keyboard navigable**, because it is a table of buttons rather than
  *    a drawing.
  *

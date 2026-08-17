@@ -18,11 +18,11 @@ import { gzipSync } from 'node:zlib';
 
 const OUT = join(dirname(fileURLToPath(import.meta.url)), '..', 'dist-site');
 
-/** Page weight excluding video (PRD-SITE-005). */
+/** Page weight excluding video. */
 const PAGE_BUDGET_BYTES = 500 * 1024;
 
 /**
- * Words that must not appear in any public page (PRD-SITE-007).
+ * Words that must not appear in any public page.
  *
  * The wallet is plumbing. A principal who searches Lenterra and finds crypto
  * language will not run a pilot, and they will be right not to on the
@@ -49,7 +49,7 @@ const FORBIDDEN = [
 ];
 
 /**
- * Things that would be a student-facing download (PRD-SITE-006).
+ * Things that would be a student-facing download.
  *
  * The pilot's consent model runs through schools. A download button aimed at a
  * fourteen-year-old routes around the only mechanism that makes taking their
@@ -101,14 +101,14 @@ for (const page of pages) {
 
   for (const word of FORBIDDEN) {
     if (new RegExp(`\\b${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`).test(text)) {
-      console.error(`✖ ${name} contains "${word}" — see PRD-SITE-007`);
+      console.error(`✖ ${name} contains "${word}" — see the forbidden-language list`);
       failed = true;
     }
   }
 
   for (const link of FORBIDDEN_LINKS) {
     if (html.toLowerCase().includes(link)) {
-      console.error(`✖ ${name} links to "${link}" — no student-facing download in R1 (PRD-SITE-006)`);
+      console.error(`✖ ${name} links to "${link}" — no student-facing download in R1`);
       failed = true;
     }
   }
@@ -124,7 +124,7 @@ for (const page of pages) {
 }
 
 // Both locales must exist for every page. A missing Indonesian page is a hole
-// in the version the audience actually reads (PRD-SITE-001).
+// in the version the audience actually reads.
 const indonesian = pages.filter((page) => !page.includes(`${OUT}/en/`) && !page.endsWith('404.html'));
 const english = pages.filter((page) => page.includes(`${OUT}/en/`));
 if (indonesian.length !== english.length) {

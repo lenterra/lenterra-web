@@ -162,7 +162,7 @@ export function useClassSummary(classId: string | null): UseQueryResult<ClassSum
  * The roster, polled fast.
  *
  * Five seconds, because during onboarding a teacher is watching thirty
- * students type a code and needs to see them arrive (PRD-TCH-002). Everywhere
+ * students type a code and needs to see them arrive. Everywhere
  * else this is the wrong interval, so the caller opts in.
  */
 export function useRoster(classId: string | null, live = false): UseQueryResult<Roster> {

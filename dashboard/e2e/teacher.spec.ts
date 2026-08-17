@@ -3,7 +3,7 @@
  * roster → drill into a student's evidence → assign something.
  *
  * The requirement behind most of this is that a teacher who has never seen the
- * dashboard can run class onboarding unaided (PRD-TCH-001), which is measured
+ * dashboard can run class onboarding unaided, which is measured
  * with real teachers and cannot be automated. What *can* be automated is the
  * part that would make that session fail for a reason nobody intended: a route
  * that does not load, a number that renders as `NaN`, a link that goes nowhere.
@@ -140,7 +140,7 @@ test('the attention list is ordered by urgency and drills through to a student',
 });
 
 test('a student page shows the evidence behind every claim it makes', async ({ page }) => {
-  // The evidence is complete rather than sampled (PRD-TCH-008): a teacher who
+  // The evidence is complete rather than sampled: a teacher who
   // is going to tell a student something about their work needs to be able to
   // check it first.
   await mockRpc(page);
@@ -161,7 +161,7 @@ test('a student page shows the evidence behind every claim it makes', async ({ p
 });
 
 test('a mastery value is never shown without the evidence behind it', async ({ page }) => {
-  // PRD-ADPT-005 restricts numbers on the *student's* screen, not the
+  // Bands restrict numbers on the *student's* screen, not the
   // teacher's. A teacher genuinely needs to judge whether 0.68 and 0.71 differ,
   // and the app's own profile screen is structurally incapable of showing a
   // value because its contract does not carry one.

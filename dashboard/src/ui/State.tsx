@@ -73,7 +73,7 @@ export function Freshness({
  * The unsynced-data warning.
  *
  * The API tells the dashboard when the picture is incomplete, so the dashboard
- * cannot silently present it as complete (PRD-TCH-010). A teacher deciding who
+ * cannot silently present it as complete. A teacher deciding who
  * needs help from data missing three students' week would be making a worse
  * decision than one made with no data at all.
  */

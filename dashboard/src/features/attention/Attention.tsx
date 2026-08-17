@@ -1,12 +1,12 @@
 /**
- * The attention list (PRD-TCH-007).
+ * The attention list.
  *
  * At most five, and each one names the reason and a next action. The cap is
  * the point: a list of thirty "students needing attention" is a list nobody
  * acts on, and a teacher with one free period can help about five people.
  *
  * Every entry is a claim about a child, so each is a link into the evidence
- * behind it (PRD-TCH-008). A dashboard that asserts "Rina is struggling" and
+ * behind it. A dashboard that asserts "Rina is struggling" and
  * cannot show why is asking to be believed rather than read.
  */
 

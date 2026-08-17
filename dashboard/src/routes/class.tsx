@@ -6,7 +6,7 @@
  * what to *do* — the gaps worth teaching and the students who need a word —
  * and the grid that lets them check that judgement comes after it.
  *
- * Participation is present but small (PRD-TCH-006): how much a class played is
+ * Participation is present but small: how much a class played is
  * the easiest number to collect and the least useful one to lead with, and a
  * dashboard headlining activity teaches teachers to optimise for activity.
  */
@@ -67,7 +67,7 @@ export default function ClassRoute() {
       ) : null}
 
       {/* What to teach next, named rather than left to inspection
-          (PRD-TCH-005). A grid alone asks a teacher to do the analysis. */}
+         . A grid alone asks a teacher to do the analysis. */}
       <section className={styles.section}>
         <h2>{t('classView.gapsTitle')}</h2>
         {data.gaps.length === 0 ? (
@@ -89,7 +89,7 @@ export default function ClassRoute() {
                   certified in this subject needs to know what students
                   typically get wrong and what to do on Monday, or the
                   dashboard has handed them a problem and no way to act on it
-                  (PRD-TCH-012).
+.
                 */}
                 {gap.teaching ? (
                   <details className={styles.teaching}>

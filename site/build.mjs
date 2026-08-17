@@ -3,7 +3,7 @@
  * The landing site (10-13).
  *
  * A static generator in one file, and the absence of a framework is the point
- * rather than an omission. PRD-SITE-005 asks for a page readable within three
+ * rather than an omission. The page must be readable within three
  * seconds on a 3G-class connection at under 500 KB. A React build reaches that
  * only after being fought; hand-written HTML reaches it by default, and this
  * site is six pages of prose that will change a few times a year.
@@ -11,7 +11,7 @@
  * Indonesian is generated at the root and English under `/en/`, from two
  * content files with identical shapes. Indonesian is the source: a missing
  * English string is a gap somebody notices, while a missing Indonesian one
- * would be a hole in the version the audience actually reads (PRD-SITE-001).
+ * would be a hole in the version the audience actually reads.
  *
  * Nothing here loads a script, a font, or an image from another host. That is
  * partly the byte budget and partly that a school laptop behind a filtering
@@ -40,7 +40,7 @@ const OUT = join(HERE, '..', 'dist-site');
  */
 const CONTACT_EMAIL = 'halo@lenterra.faizath.com';
 
-/** Assets live in the org profile repository and are referenced, never forked (PRD-SITE-009). */
+/** Assets live in the org profile repository and are referenced, never forked. */
 const PROFILE_RAW = 'https://raw.githubusercontent.com/lenterra/.github/main/profile/assets';
 const DEMO_VIDEO = 'https://drive.google.com/file/d/1QS3X9M3gTgCz83b9qG_wX-ffxFTU74DL/preview';
 const GITHUB_ORG = 'https://github.com/lenterra';
@@ -123,8 +123,7 @@ ${body}
 }
 
 // ---------------------------------------------------------------------------
-// Pages
-// ---------------------------------------------------------------------------
+// Pages ---------------------------------------------------------------------------
 
 function home(t) {
   const features = t.home.features
@@ -169,7 +168,7 @@ function schools(t) {
   // A mailto rather than a form service. Nothing is posted anywhere: the fields
   // compose a message in the visitor's own mail client and they press send. It
   // collects nothing on our side and needs no backend, which is what keeps this
-  // a genuinely static site (PRD-SITE-008).
+  // a genuinely static site.
   const fields = Object.entries(f)
     .map(
       ([key, label]) => `
@@ -375,8 +374,7 @@ const PAGES = [
 ];
 
 // ---------------------------------------------------------------------------
-// Build
-// ---------------------------------------------------------------------------
+// Build ---------------------------------------------------------------------------
 
 function build() {
   if (existsSync(OUT)) rmSync(OUT, { recursive: true });

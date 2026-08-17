@@ -3,12 +3,12 @@
  *
  * Two things here are safety rather than convenience.
  *
- * Removing a student is confirmed and never deletes their work (PRD-TCH-003):
+ * Removing a student is confirmed and never deletes their work:
  * it ends their membership of this class. A teacher tidying a roster must not
  * be able to destroy a term of a child's learning history with one tap.
  *
  * Reclaim approvals exist because a class-code account has no email to recover
- * through, so the teacher is the recovery mechanism (PRD-ONB-005). Approving
+ * through, so the teacher is the recovery mechanism. Approving
  * one transfers an account, which is exactly why it is a deliberate,
  * audited action rather than a quiet one.
  */

@@ -2,7 +2,7 @@
  * The class list, and creating one.
  *
  * Class creation is the first thing a teacher does and the requirement is that
- * it takes under two minutes (PRD-TCH-001). So the form is two fields, and the
+ * it takes under two minutes. So the form is two fields, and the
  * join code appears immediately afterwards large enough to read off a screen
  * and write on a whiteboard.
  */
@@ -84,7 +84,7 @@ export default function ClassesRoute() {
                 </span>
               </Link>
               {/* Large, because it gets copied onto a whiteboard from across
-                  a room (PRD-ONB-002). */}
+                  a room. */}
               <span className={styles.code}>{row.joinCode}</span>
             </li>
           ))}

@@ -1,5 +1,5 @@
 /**
- * The consent gate (PRD-ONB-018).
+ * The consent gate.
  *
  * The pilot runs through schools, and a student joining a class is the moment a
  * minor's data starts being collected. So the attestation comes before the

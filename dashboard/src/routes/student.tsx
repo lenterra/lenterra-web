@@ -1,12 +1,12 @@
 /**
  * One student.
  *
- * A teaching brief, not a dossier (PRD-TCH-009, PRD-TCH-016). It opens with a
+ * A teaching brief, not a dossier. It opens with a
  * plain sentence about what this student is good at and what to do next,
  * because that is what a teacher with four minutes before a lesson actually
  * needs — and the evidence sits underneath for when they want to check it.
  *
- * The evidence is complete rather than sampled (PRD-TCH-008). Every claim on
+ * The evidence is complete rather than sampled. Every claim on
  * this page drills down to the attempts behind it; a summary that cannot be
  * checked is asking to be trusted rather than read, and a teacher who cannot
  * check it correctly stops believing the whole dashboard.
@@ -77,7 +77,7 @@ export default function StudentRoute() {
                 <td>
                   {t(`band.${node.band}`)}
                   {/* The raw value is shown to teachers and never to students
-                      (PRD-ADPT-005): a teacher needs to judge whether 0.68 and
+                     : a teacher needs to judge whether 0.68 and
                       0.71 differ, and evidenceCount says whether either means
                       anything yet. */}
                   <span className={styles.raw}>{node.mastery.toFixed(2)}</span>

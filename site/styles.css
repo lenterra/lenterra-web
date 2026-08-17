@@ -3,7 +3,7 @@
  *
  * Under 4 KB, which is why it is inlined rather than linked: on a connection
  * where the round trip costs more than the bytes, a second request for a small
- * file is the expensive part (PRD-SITE-005).
+ * file is the expensive part.
  *
  * System fonts only. A web font is 30–100 KB, arrives after the text does, and
  * reflows the page under somebody who has already started reading.
