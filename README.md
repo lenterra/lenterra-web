@@ -61,10 +61,26 @@ npm run check:site          # page weight, forbidden language, no app downloads
 npm run test:e2e            # teacher flow + axe, needs a Chromium download
 ```
 
-Nothing runs these automatically. There is no CI in this repository, so the
-last three in particular are only as good as the habit of running them — the
-accessibility pass and the language check are the ones that will rot quietest,
-because neither failure is visible to somebody who does not go looking.
+A GitHub Actions workflow runs all of these on every push and pull request.
+The three that most needed it are the last three, because none of their
+failures is visible to somebody who is not looking: a dashboard that fails an
+axe rule still renders, and a landing page that has doubled in weight still
+loads on the laptop of whoever added the image.
+
+`dashboard/e2e/live.spec.ts` is the exception — it runs against a real
+deployment and skips itself without `E2E_LIVE_URL`, so CI never touches one:
+
+```bash
+E2E_LIVE_URL=https://lenterra-api.faizath.com npm run test:e2e
+```
+
+It signs nobody in. That would need a staff invite code, which is single-use
+and confers authority over a school's records, and an environment variable is
+not where such a thing belongs. What it checks is the part reachable before a
+session exists — which is where a contract break between this repository and
+the backend shows up first. It also refuses to report the refusal checks as
+passing when nothing healthy answers, because a parked domain returns 403 to
+everything and that is indistinguishable from refusing correctly.
 
 The build fails if the initial load exceeds **200 KB gzipped**. That number
 comes from the reference environment in the technical spec: an older Windows
