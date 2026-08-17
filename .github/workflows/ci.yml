@@ -1,0 +1,106 @@
+# CI for the site and the teacher dashboard.
+#
+# This repository had no CI, and the README said so plainly: the accessibility
+# pass, the page-weight ceiling and the forbidden-language check ran only when
+# somebody remembered. Those three rot the quietest, because none of their
+# failures is visible to a person who is not looking for it — a dashboard that
+# fails an axe rule still renders, and a landing page that has doubled in weight
+# still loads on the laptop of whoever added the image.
+#
+# One workflow, three jobs, split by what a failure means rather than by tidiness:
+# `checks` is "the code is wrong", `site` is "the public page broke a promise",
+# and `e2e` is "a teacher cannot get through the product". They run in parallel;
+# nothing here depends on the backend.
+
+name: ci
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    name: typecheck, tests, bundle budget
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+
+      - name: typecheck
+        run: npm run typecheck
+
+      - name: unit tests
+        run: npm run test:dashboard
+
+      # The build runs the 200 KB gzipped entry budget as part of itself, so
+      # this step is both. The number comes from the reference environment: an
+      # older Windows laptop on a 3G-class connection. Enforced rather than
+      # reviewed, because a budget nobody enforces drifts one dependency at a
+      # time until a teacher waits nine seconds for a class list.
+      - name: build and bundle budget
+        run: npm run build:dashboard
+
+  site:
+    name: site weight and language
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+
+      # Page weight excluding video, the forbidden-language list, and the rule
+      # that the landing page never offers an app download. The last is a
+      # promise to the reader rather than a technical constraint, which is
+      # exactly the kind that erodes without a check.
+      - name: site checks
+        run: npm run check:site
+
+  e2e:
+    name: teacher flow and accessibility
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+
+      # Chromium only. The audience is a school laptop, and running three
+      # engines to learn the same thing three times is time a pull request
+      # spends waiting.
+      - name: install chromium
+        run: npx playwright install --with-deps chromium
+        working-directory: dashboard
+
+      # Every RPC is intercepted, so this needs no backend. `live.spec.ts` is
+      # the exception and skips itself without E2E_LIVE_URL, which is not set
+      # here on purpose: pointing CI at production would write to it.
+      - name: teacher flow and axe
+        run: npm run test:e2e
+
+      - name: upload the report when it fails
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: dashboard/playwright-report/
+          retention-days: 7
