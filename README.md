@@ -44,7 +44,14 @@ pointing at staging is a build variable rather than a source edit.
 npm run typecheck
 npm run test:dashboard
 npm run build:dashboard     # includes the bundle-budget check
+npm run check:site          # page weight, forbidden language, no app downloads
+npm run test:e2e            # teacher flow + axe, needs a Chromium download
 ```
+
+Nothing runs these automatically. There is no CI in this repository, so the
+last three in particular are only as good as the habit of running them — the
+accessibility pass and the language check are the ones that will rot quietest,
+because neither failure is visible to somebody who does not go looking.
 
 The build fails if the initial load exceeds **200 KB gzipped**. That number
 comes from the reference environment in the technical spec: an older Windows
