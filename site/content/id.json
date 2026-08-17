@@ -1,0 +1,208 @@
+{
+  "locale": "id",
+  "lang": "id",
+  "dir": "",
+  "nav": {
+    "home": "Beranda",
+    "schools": "Untuk Sekolah",
+    "teachers": "Untuk Guru",
+    "games": "Permainan",
+    "privacy": "Privasi",
+    "about": "Tentang",
+    "switch": "English",
+    "switchHref": "/en/"
+  },
+  "site": {
+    "name": "Lenterra",
+    "tagline": "Belajar dari budaya, tumbuh untuk masa depan.",
+    "skipToContent": "Langsung ke isi"
+  },
+  "footer": {
+    "note": "Lenterra dikembangkan oleh Team NFZ. Uji coba tahap pertama dijalankan bersama sekolah, tanpa biaya.",
+    "copyright": "© 2025 Lenterra — Team NFZ."
+  },
+  "home": {
+    "title": "Lenterra — belajar dari budaya",
+    "description": "Platform belajar yang mengubah permainan tradisional Indonesia menjadi pelajaran berpikir komputasional dan keamanan digital untuk siswa SMP dan SMA.",
+    "heroTitle": "Permainan yang sudah dikenal, pelajaran yang belum pernah ada",
+    "heroBody": "Congklak dan Benteng bukan hiasan di layar. Aturannya sendiri yang mengajarkan berhitung, menyusun langkah, dan menimbang risiko — jadi yang dilatih siswa saat bermain adalah kemampuan yang sama yang dipakai di komputer.",
+    "cta": "Daftarkan sekolah Anda",
+    "ctaSecondary": "Lihat pemetaan kemampuannya",
+    "featuresTitle": "Tiga hal yang membedakannya",
+    "features": [
+      {
+        "title": "Mekanik permainan, bukan tempelan",
+        "body": "Setiap misi dipetakan ke satu kemampuan tertentu, dan pemetaannya bisa Anda periksa sendiri di halaman Permainan. Kalau sebuah misi tidak benar-benar melatih kemampuan yang diklaimnya, misi itu tidak diterbitkan."
+      },
+      {
+        "title": "Bisa dimainkan tanpa sinyal",
+        "body": "Siswa bermain penuh tanpa koneksi — misi, lawan, hasil, dan poin semuanya berjalan di perangkat. Ketika sinyal kembali, semuanya terkirim dan dihitung. Tidak ada yang hilang karena jaringan."
+      },
+      {
+        "title": "Guru melihat kemampuan, bukan sekadar skor",
+        "body": "Papan guru menunjukkan kemampuan mana yang belum dikuasai kelas dan siapa yang perlu dibantu lebih dulu, lengkap dengan bukti dari misi mana kesimpulan itu diambil."
+      }
+    ],
+    "demoTitle": "Video demo",
+    "demoBody": "Video dibuka di tab baru dan hanya diputar kalau Anda menekannya, supaya halaman ini tetap ringan di koneksi lambat.",
+    "demoLink": "Buka video demo",
+    "statusTitle": "Apa yang sudah ada sekarang",
+    "statusBody": "Congklak dan Benteng bisa dimainkan dengan total 32 misi. Sembilan materi bacaan tersedia lengkap. Papan guru menampilkan kemampuan per kelas. Engklek dan Gaple belum ada — keduanya direncanakan, bukan tersedia."
+  },
+  "schools": {
+    "title": "Untuk Sekolah — Lenterra",
+    "description": "Apa yang dibutuhkan sekolah untuk ikut uji coba Lenterra, apa yang didapat, dan bagaimana data siswa ditangani.",
+    "heading": "Untuk sekolah",
+    "intro": "Halaman ini menjawab pertanyaan yang biasanya ditanyakan kepala sekolah sebelum menyetujui apa pun: apa yang harus disediakan, berapa biayanya, dan apa yang terjadi pada data siswa.",
+    "termTitle": "Satu semester bersama Lenterra",
+    "term": [
+      "Minggu 1 — satu jam pelajaran untuk pendaftaran. Guru membuat kelas, menuliskan kode kelas di papan, siswa masuk.",
+      "Minggu 2–4 — siswa bermain di waktu luang atau di jam pelajaran. Sepuluh sampai dua puluh menit sekali main sudah cukup.",
+      "Minggu 5 — guru membuka papan kemampuan kelas untuk pertama kali. Sepuluh menit, sekali seminggu, sudah memadai.",
+      "Sisanya — bermain berlanjut. Guru memakai papan untuk menentukan siapa yang dibantu lebih dulu."
+    ],
+    "needTitle": "Yang perlu disediakan sekolah",
+    "need": [
+      "Ponsel Android. Boleh dipakai bergantian — satu ponsel untuk beberapa siswa tidak masalah, dan aplikasinya memang dirancang untuk itu.",
+      "Satu jam pelajaran untuk pendaftaran, sekali di awal.",
+      "Satu guru yang bersedia membuka papan kemampuan sekitar sepuluh menit seminggu.",
+      "Persetujuan sekolah untuk ikut serta, sesuai prosedur yang berlaku di sekolah Anda."
+    ],
+    "costTitle": "Biaya",
+    "costBody": "Tidak ada. Uji coba tahap pertama gratis sepenuhnya, tanpa versi berbayar, tanpa iklan, dan tanpa apa pun yang bisa dibeli siswa di dalam aplikasi.",
+    "getTitle": "Yang didapat sekolah",
+    "get": [
+      "Papan kemampuan per kelas: kemampuan mana yang sudah dikuasai, mana yang belum, dan siapa yang perlu dibantu.",
+      "Laporan yang bisa diunduh untuk rapat atau evaluasi.",
+      "Materi bacaan dalam bahasa Indonesia yang bisa dipakai guru sebagai bahan ajar."
+    ],
+    "dataTitle": "Data siswa, singkatnya",
+    "dataBody": "Yang disimpan hanya nama tampilan, kelas, dan catatan hasil bermain. Tidak ada nomor telepon, alamat, lokasi, atau foto. Guru melihat kelasnya sendiri. Penghapusan data bisa diminta lewat guru dan diselesaikan dalam 30 hari.",
+    "dataLink": "Penjelasan lengkap di halaman Privasi",
+    "formTitle": "Daftarkan sekolah Anda",
+    "formIntro": "Isi keterangan di bawah ini, lalu tekan tombolnya. Aplikasi surel Anda akan terbuka dengan isi yang sudah tersusun — Anda tetap yang menekan kirim, dan tidak ada satu pun keterangan ini yang dikirim ke mana pun sebelum Anda melakukannya.",
+    "formFields": {
+      "school": "Nama sekolah",
+      "district": "Kabupaten atau kota",
+      "contact": "Nama Anda",
+      "role": "Jabatan",
+      "reach": "Surel atau nomor WhatsApp",
+      "students": "Perkiraan jumlah siswa"
+    },
+    "formSubmit": "Susun surel pendaftaran",
+    "formNote": "Kami tidak meminta satu pun keterangan tentang siswa perorangan pada tahap ini.",
+    "formNext": "Setelah surel Anda masuk, kami membalas dalam lima hari kerja dengan langkah berikutnya dan waktu yang bisa dipilih untuk pendaftaran kelas."
+  },
+  "teachers": {
+    "title": "Untuk Guru — Lenterra",
+    "description": "Apa yang ditampilkan papan kemampuan kelas, dan berapa waktu yang dibutuhkan guru.",
+    "heading": "Untuk guru",
+    "intro": "Papan kelas dibuat untuk menjawab lima pertanyaan, dan tidak lebih. Semuanya bisa dijawab dalam sepuluh menit seminggu.",
+    "questionsTitle": "Lima pertanyaan yang dijawab papan kelas",
+    "questions": [
+      "Siapa yang belum mulai sama sekali minggu ini?",
+      "Kemampuan mana yang paling banyak belum dikuasai kelas?",
+      "Siapa yang tampak kesulitan pada satu hal tertentu, berulang kali?",
+      "Dari mana kesimpulan itu diambil — misi mana, kapan, berapa kali?",
+      "Apa yang sebaiknya saya berikan kepada siswa ini berikutnya?"
+    ],
+    "timeTitle": "Waktu yang dibutuhkan",
+    "timeBody": "Satu jam pelajaran untuk pendaftaran di awal, lalu sekitar sepuluh menit seminggu. Papan ini tidak perlu dibuka setiap hari, dan tidak ada yang rusak kalau seminggu terlewat.",
+    "evidenceTitle": "Setiap kesimpulan menyebutkan buktinya",
+    "evidenceBody": "Ketika papan menyatakan seorang siswa menguasai sesuatu, Anda bisa menekan keterangannya dan melihat dari misi mana kesimpulan itu diambil, kapan dikerjakan, dan berapa kali. Angka yang tidak bisa ditelusuri asalnya tidak layak dipakai untuk menilai anak."
+  },
+  "games": {
+    "title": "Permainan — Lenterra",
+    "description": "Congklak dan Benteng, apa yang diajarkan masing-masing, dan pemetaan mekanik ke kemampuan.",
+    "heading": "Permainan",
+    "intro": "Bagian ini adalah hal yang paling mudah Anda periksa sendiri, dan memang sengaja ditulis supaya bisa diperiksa. Setiap mekanik permainan dipasangkan dengan kemampuan yang dilatihnya, dan alasannya disebutkan.",
+    "list": [
+      {
+        "name": "Congklak",
+        "status": "Tersedia — 20 misi",
+        "teaches": "Berhitung, pola berulang, menyusun langkah, dan menimbang pilihan.",
+        "mapping": [
+          "Menghitung biji sebelum menyebar melatih ketelitian menghitung dan menjaga jumlah berjalan.",
+          "Papan yang melingkar membuat siswa berhitung di atas sesuatu yang berulang — ide yang sama dengan jam dan hari dalam seminggu.",
+          "Rantai sebaran yang menyambung berkali-kali adalah perulangan, lengkap dengan alasan berhentinya.",
+          "Lubang paling penuh sering justru pilihan yang salah. Menemukan itu sendiri adalah menemukan batas cara berpikir serakah."
+        ]
+      },
+      {
+        "name": "Benteng",
+        "status": "Tersedia — 12 misi",
+        "teaches": "Dasar keamanan digital: apa yang perlu dilindungi, siapa yang mungkin datang, dan izin yang kedaluwarsa.",
+        "mapping": [
+          "Hanya benteng yang menentukan kalah menang, sementara bidak bisa hilang dan permainan berlanjut. Itu perbedaan antara aset dan alat.",
+          "Angka kesegaran naik sendiri setiap giliran, jadi izin melemah karena waktu berjalan — persis seperti sesi masuk yang kedaluwarsa.",
+          "Satu penjaga tidak bisa menutup dua jalur. Dari situ muncul gagasan pertahanan berlapis.",
+          "Bidak yang tertangkap ditahan, bukan dihapus, sehingga kehilangan terlihat sebagai keadaan yang masih bisa dipulihkan."
+        ]
+      },
+      {
+        "name": "Engklek",
+        "status": "Direncanakan — belum tersedia",
+        "teaches": "Pola dan urutan.",
+        "mapping": []
+      },
+      {
+        "name": "Gaple",
+        "status": "Direncanakan — belum tersedia",
+        "teaches": "Peluang dan pengambilan keputusan dengan informasi tidak lengkap.",
+        "mapping": []
+      }
+    ],
+    "coursesTitle": "Materi bacaan",
+    "coursesBody": "Sembilan materi, empat puluh pelajaran, dalam bahasa Indonesia. Panjang tiap pelajaran dua sampai enam menit dan bisa dibaca tanpa koneksi. Materi memberi nama pada hal yang sudah dilakukan siswa di permainan — misalnya bahwa rantai sebaran yang mereka buat itu disebut perulangan."
+  },
+  "privacy": {
+    "title": "Privasi — Lenterra",
+    "description": "Data apa yang dikumpulkan tentang siswa, siapa yang bisa melihatnya, berapa lama disimpan, dan bagaimana meminta penghapusan.",
+    "heading": "Privasi",
+    "intro": "Halaman ini ditulis untuk orang tua dan guru, bukan untuk pengacara. Kalau ada bagian yang tidak jelas, itu kekurangan kami dan kami ingin tahu.",
+    "sections": [
+      {
+        "heading": "Apa yang dikumpulkan",
+        "body": "Nama tampilan yang dipilih siswa, kelas tempat mereka bergabung, dan catatan hasil bermain: misi apa yang dikerjakan, kapan, berhasil atau tidak, dan kesimpulan kemampuan yang ditarik dari situ."
+      },
+      {
+        "heading": "Apa yang tidak dikumpulkan",
+        "body": "Tidak ada nomor telepon, alamat rumah, lokasi, foto, daftar kontak, maupun isi perangkat. Aplikasi tidak meminta izin kamera, mikrofon, maupun lokasi."
+      },
+      {
+        "heading": "Siapa yang bisa melihat",
+        "body": "Siswa melihat catatannya sendiri. Guru melihat kelas yang diampunya. Tidak ada guru yang bisa melihat kelas guru lain. Peringkat antar siswa hanya menampilkan poin, tidak pernah menampilkan penilaian kemampuan."
+      },
+      {
+        "heading": "Berapa lama disimpan",
+        "body": "Selama sekolah masih ikut serta, dan paling lama satu tahun setelah akun terakhir aktif. Setelah itu catatan dihapus."
+      },
+      {
+        "heading": "Cara meminta penghapusan",
+        "body": "Sampaikan kepada guru kelas. Permintaan diselesaikan dalam 30 hari, dan seluruh catatan siswa tersebut dihapus, bukan sekadar disembunyikan."
+      },
+      {
+        "heading": "Persetujuan",
+        "body": "Pada tahap uji coba, siswa bergabung melalui sekolah. Kelas baru hanya bisa dibuat setelah guru mencatat bagaimana sekolah memperoleh persetujuan untuk ikut serta. Sebelum catatan itu ada, tidak ada data siswa yang dikumpulkan."
+      }
+    ]
+  },
+  "about": {
+    "title": "Tentang — Lenterra",
+    "description": "Team NFZ, asal usul Lenterra di Find IT! UGM 2025, dan cara menghubungi kami.",
+    "heading": "Tentang",
+    "intro": "Lenterra dikembangkan oleh Team NFZ dan bermula dari Find IT! UGM 2025. Namanya menggabungkan lentera dan terra — cahaya untuk belajar, berpijak pada tanah sendiri.",
+    "teamTitle": "Team NFZ",
+    "team": ["Muhammad Faiz Atharrahman", "Firsa Athaya Raissa", "Nadya Saski Wardiman"],
+    "contactTitle": "Menghubungi kami",
+    "contactBody": "Untuk pertanyaan sekolah, kerja sama, atau soal data siswa, kirim surel ke alamat di bawah ini.",
+    "repoTitle": "Kode sumber",
+    "repoBody": "Pengembangan berlangsung terbuka di GitHub."
+  },
+  "results": {
+    "title": "Hasil — Lenterra",
+    "description": "Temuan dari uji coba di sekolah, beserta batasannya.",
+    "heading": "Hasil",
+    "intro": "Belum ada hasil untuk ditampilkan. Uji coba pertama belum berjalan, dan halaman ini akan diisi dengan temuan sebenarnya beserta batasannya — termasuk ketika temuannya tidak seperti yang kami harapkan."
+  }
+}

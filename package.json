@@ -2,11 +2,15 @@
   "name": "lenterra-web",
   "private": true,
   "version": "0.1.0",
-  "workspaces": ["dashboard"],
+  "workspaces": [
+    "dashboard"
+  ],
   "scripts": {
     "build:dashboard": "npm run build --workspace @lenterra/dashboard",
     "test:dashboard": "npm run test --workspace @lenterra/dashboard",
     "typecheck": "npm run typecheck --workspaces --if-present",
-    "dev": "npm run dev --workspace @lenterra/dashboard"
+    "dev": "npm run dev --workspace @lenterra/dashboard",
+    "build:site": "node site/build.mjs",
+    "check:site": "node site/build.mjs && node site/check.mjs"
   }
 }

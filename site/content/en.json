@@ -1,0 +1,208 @@
+{
+  "locale": "en",
+  "lang": "en",
+  "dir": "/en",
+  "nav": {
+    "home": "Home",
+    "schools": "For Schools",
+    "teachers": "For Teachers",
+    "games": "The Games",
+    "privacy": "Privacy",
+    "about": "About",
+    "switch": "Bahasa Indonesia",
+    "switchHref": "/"
+  },
+  "site": {
+    "name": "Lenterra",
+    "tagline": "Learning rooted in culture, built for what comes next.",
+    "skipToContent": "Skip to content"
+  },
+  "footer": {
+    "note": "Lenterra is built by Team NFZ. The first pilot runs with schools, at no cost.",
+    "copyright": "© 2025 Lenterra — Team NFZ."
+  },
+  "home": {
+    "title": "Lenterra — learning rooted in culture",
+    "description": "A learning platform that turns traditional Indonesian games into lessons in computational thinking and digital safety for secondary students.",
+    "heroTitle": "Games they already know, lessons they have never had",
+    "heroBody": "Congklak and Benteng are not decoration on a screen. Their rules are what teach counting, sequencing, and weighing risk — so what a student practises while playing is the same thing they will use at a computer.",
+    "cta": "Register your school",
+    "ctaSecondary": "See how mechanics map to skills",
+    "featuresTitle": "Three things that make it different",
+    "features": [
+      {
+        "title": "Mechanics, not a skin",
+        "body": "Every mission maps to one named skill, and the mapping is published on the Games page so you can check it. A mission that does not genuinely exercise the skill it claims does not get published."
+      },
+      {
+        "title": "Playable with no signal",
+        "body": "Students play complete missions offline — the board, the opponent, the result and the points all run on the device. When signal returns everything is submitted and counted. Nothing is lost to the network."
+      },
+      {
+        "title": "Teachers see understanding, not scores",
+        "body": "The class board shows which skills the class has not grasped and who needs help first, alongside the evidence each conclusion was drawn from."
+      }
+    ],
+    "demoTitle": "Demo video",
+    "demoBody": "The video opens in a new tab and plays only when you press it, so this page stays light on a slow connection.",
+    "demoLink": "Open the demo video",
+    "statusTitle": "What exists today",
+    "statusBody": "Congklak and Benteng are playable across 32 missions. Nine written courses are complete. The teacher board reports skills per class. Engklek and Gaple do not exist yet — both are planned, not available."
+  },
+  "schools": {
+    "title": "For Schools — Lenterra",
+    "description": "What a school needs to join the Lenterra pilot, what it gets back, and how student data is handled.",
+    "heading": "For schools",
+    "intro": "This page answers what a head teacher usually asks before agreeing to anything: what must we provide, what does it cost, and what happens to our students' data.",
+    "termTitle": "A term with Lenterra",
+    "term": [
+      "Week 1 — one lesson period to enrol. The teacher creates a class, writes the class code on the board, students join.",
+      "Weeks 2–4 — students play in free time or in class. Ten to twenty minutes a session is enough.",
+      "Week 5 — the teacher opens the class board for the first time. Ten minutes, once a week, is sufficient.",
+      "Onwards — play continues. The teacher uses the board to decide who to help first."
+    ],
+    "needTitle": "What the school provides",
+    "need": [
+      "Android phones. Sharing is fine — one handset between several students is expected, and the app is built for it.",
+      "One lesson period for enrolment, once, at the start.",
+      "One teacher willing to open the class board for about ten minutes a week.",
+      "School consent to take part, following whatever process your school already uses."
+    ],
+    "costTitle": "Cost",
+    "costBody": "None. The first pilot is entirely free: no paid tier, no advertising, and nothing a student can buy inside the app.",
+    "getTitle": "What the school gets back",
+    "get": [
+      "A per-class skill board: what has been grasped, what has not, and who needs help.",
+      "Exportable reports for meetings and reviews.",
+      "Written course material in Indonesian that teachers can use as lesson content."
+    ],
+    "dataTitle": "Student data, briefly",
+    "dataBody": "Only a display name, a class, and a record of play is stored. No phone numbers, addresses, locations or photographs. A teacher sees their own class. Deletion can be requested through the teacher and is completed within 30 days.",
+    "dataLink": "The full explanation is on the Privacy page",
+    "formTitle": "Register your school",
+    "formIntro": "Fill in the details below and press the button. Your mail app opens with the message composed — you still press send, and none of this leaves your device until you do.",
+    "formFields": {
+      "school": "School name",
+      "district": "District or city",
+      "contact": "Your name",
+      "role": "Your role",
+      "reach": "Email or WhatsApp number",
+      "students": "Approximate number of students"
+    },
+    "formSubmit": "Compose the registration email",
+    "formNote": "We ask for nothing at all about individual students at this stage.",
+    "formNext": "Once your email arrives we reply within five working days with the next steps and times you can pick for class enrolment."
+  },
+  "teachers": {
+    "title": "For Teachers — Lenterra",
+    "description": "What the class skill board shows, and how much of a teacher's time it takes.",
+    "heading": "For teachers",
+    "intro": "The class board is built to answer five questions and no more. All five can be answered in ten minutes a week.",
+    "questionsTitle": "The five questions the board answers",
+    "questions": [
+      "Who has not started at all this week?",
+      "Which skill is the class furthest from grasping?",
+      "Who appears to be stuck on one particular idea, repeatedly?",
+      "Where did that conclusion come from — which missions, when, how many times?",
+      "What should I give this student next?"
+    ],
+    "timeTitle": "The time it takes",
+    "timeBody": "One lesson period to enrol at the start, then about ten minutes a week. The board does not need opening daily, and nothing breaks if a week is missed.",
+    "evidenceTitle": "Every conclusion names its evidence",
+    "evidenceBody": "When the board says a student has grasped something, you can open that claim and see which missions it came from, when they were played, and how many times. A number whose origin cannot be traced has no business being used to judge a child."
+  },
+  "games": {
+    "title": "The Games — Lenterra",
+    "description": "Congklak and Benteng, what each teaches, and how the mechanics map to skills.",
+    "heading": "The games",
+    "intro": "This is the easiest part of the product to check for yourself, and it is written to be checked. Each mechanic is paired with the skill it exercises, and the reason is stated.",
+    "list": [
+      {
+        "name": "Congklak",
+        "status": "Available — 20 missions",
+        "teaches": "Counting, repeating patterns, sequencing, and weighing choices.",
+        "mapping": [
+          "Counting seeds before sowing trains careful counting and keeping a running total.",
+          "A board that loops makes a student count on something that repeats — the same idea as a clock, or days of the week.",
+          "A chain of sowings that keeps continuing is a loop, complete with a stopping condition.",
+          "The fullest hole is often the wrong choice. Finding that out is finding the limits of greedy reasoning."
+        ]
+      },
+      {
+        "name": "Benteng",
+        "status": "Available — 12 missions",
+        "teaches": "The basics of digital safety: what needs protecting, who might come, and permissions that expire.",
+        "mapping": [
+          "Only the fort decides the game, while units can be lost and play continues. That is the difference between an asset and a means.",
+          "The freshness number rises by itself each turn, so permission weakens because time passes — exactly like a login session expiring.",
+          "One guard cannot close two routes, which is where defence in depth comes from.",
+          "A captured unit is held rather than deleted, so a loss is visible as a state that can still be recovered from."
+        ]
+      },
+      {
+        "name": "Engklek",
+        "status": "Planned — not available",
+        "teaches": "Pattern and sequence.",
+        "mapping": []
+      },
+      {
+        "name": "Gaple",
+        "status": "Planned — not available",
+        "teaches": "Probability and deciding on incomplete information.",
+        "mapping": []
+      }
+    ],
+    "coursesTitle": "Written courses",
+    "coursesBody": "Nine courses, forty lessons, in Indonesian. Each lesson runs two to six minutes and reads with no connection. The courses put names to things students have already done in the games — that the chain of sowings they built is called a loop, for instance."
+  },
+  "privacy": {
+    "title": "Privacy — Lenterra",
+    "description": "What is collected about students, who can see it, how long it is kept, and how to request deletion.",
+    "heading": "Privacy",
+    "intro": "This page is written for parents and teachers, not for lawyers. If any part of it is unclear that is our failing and we would like to know.",
+    "sections": [
+      {
+        "heading": "What is collected",
+        "body": "The display name a student chooses, the class they joined, and a record of play: which missions were attempted, when, whether they succeeded, and the skill conclusions drawn from that."
+      },
+      {
+        "heading": "What is not collected",
+        "body": "No phone numbers, home addresses, locations, photographs, contact lists or device contents. The app requests no camera, microphone or location permission."
+      },
+      {
+        "heading": "Who can see it",
+        "body": "A student sees their own record. A teacher sees the class they teach. No teacher can see another teacher's class. Leaderboards rank points only, never skill assessments."
+      },
+      {
+        "heading": "How long it is kept",
+        "body": "For as long as the school takes part, and at most one year after the account was last active. After that the record is deleted."
+      },
+      {
+        "heading": "How to request deletion",
+        "body": "Ask the class teacher. The request is completed within 30 days, and that student's record is deleted rather than merely hidden."
+      },
+      {
+        "heading": "Consent",
+        "body": "During the pilot, students join through their school. A class can only be created once the teacher has recorded how the school obtained consent to take part. Before that record exists, no student data is collected at all."
+      }
+    ]
+  },
+  "about": {
+    "title": "About — Lenterra",
+    "description": "Team NFZ, Lenterra's origin at Find IT! UGM 2025, and how to reach us.",
+    "heading": "About",
+    "intro": "Lenterra is built by Team NFZ and began at Find IT! UGM 2025. The name joins lentera, a lantern, with terra — a light for learning, standing on its own ground.",
+    "teamTitle": "Team NFZ",
+    "team": ["Muhammad Faiz Atharrahman", "Firsa Athaya Raissa", "Nadya Saski Wardiman"],
+    "contactTitle": "Getting in touch",
+    "contactBody": "For school enquiries, partnerships, or anything about student data, write to the address below.",
+    "repoTitle": "Source",
+    "repoBody": "Development happens in the open on GitHub."
+  },
+  "results": {
+    "title": "Results — Lenterra",
+    "description": "Findings from the school pilot, stated with their limitations.",
+    "heading": "Results",
+    "intro": "There are no results to show yet. The first pilot has not run, and this page will carry real findings and their limitations — including when the findings are not what we hoped for."
+  }
+}
