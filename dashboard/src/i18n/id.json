@@ -50,7 +50,9 @@
     "gapLine": "{{below}} dari {{total}} siswa belum cakap",
     "suggestedMissions": "Misi yang membantu",
     "noGaps": "Belum ada pola yang menonjol.",
-    "noAttention": "Tidak ada yang perlu perhatian khusus sekarang."
+    "noAttention": "Tidak ada yang perlu perhatian khusus sekarang.",
+    "howToTeach": "Cara mengajarkannya",
+    "misconception": "Yang biasanya salah dipahami:"
   },
   "attention": {
     "repeated_struggle": "{{name}} gagal berulang di {{skill}}",

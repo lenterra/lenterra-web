@@ -41,6 +41,14 @@ export interface ClassSummary {
     totalStudents: number;
     suggestedLessonId: string | null;
     suggestedMissionIds: string[];
+    /**
+     * Authored prose, not a key.
+     *
+     * The misconception and the first move come from the catalog, reviewed
+     * alongside the course material, so a correction reaches a teacher without
+     * a dashboard release.
+     */
+    teaching: { misconception: string; howToTeach: string } | null;
   }[];
   /** Non-null when some students' work has not reached the server yet. */
   unsyncedWarning: { studentsWithStaleData: number } | null;

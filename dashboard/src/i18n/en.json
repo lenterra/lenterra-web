@@ -50,7 +50,9 @@
     "gapLine": "{{below}} of {{total}} students not yet proficient",
     "suggestedMissions": "Missions that help",
     "noGaps": "No clear pattern yet.",
-    "noAttention": "Nobody needs particular attention right now."
+    "noAttention": "Nobody needs particular attention right now.",
+    "howToTeach": "How to teach this",
+    "misconception": "What students usually get wrong:"
   },
   "attention": {
     "repeated_struggle": "{{name}} keeps failing on {{skill}}",

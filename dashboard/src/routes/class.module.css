@@ -30,6 +30,11 @@
 .gapCount { color: var(--ink-700); font-size: 0.875rem; }
 .gapSuggestion { color: var(--ink-500); font-size: 0.8125rem; }
 
+.teaching { margin-top: var(--space-xs); font-size: 0.9375rem; }
+.teaching summary { cursor: pointer; color: var(--blue-600); }
+.teaching p { margin: var(--space-sm) 0 0; color: var(--ink-700); }
+.misconception strong { color: var(--ink-900); }
+
 .rosterHead { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); }
 .liveToggle { display: flex; align-items: center; gap: var(--space-xs); font-size: 0.875rem; color: var(--ink-500); }
 

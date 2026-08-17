@@ -79,10 +79,27 @@ export default function ClassRoute() {
                     total: gap.totalStudents,
                   })}
                 </span>
-                {gap.suggestedMissionIds.length > 0 ? (
-                  <span className={styles.gapSuggestion}>
-                    {t('classView.suggestedMissions')}: {gap.suggestedMissionIds.join(', ')}
-                  </span>
+
+                {/*
+                  Naming the weakness is the easy half. A teacher who is not
+                  certified in this subject needs to know what students
+                  typically get wrong and what to do on Monday, or the
+                  dashboard has handed them a problem and no way to act on it
+                  (PRD-TCH-012).
+                */}
+                {gap.teaching ? (
+                  <details className={styles.teaching}>
+                    <summary>{t('classView.howToTeach')}</summary>
+                    <p className={styles.misconception}>
+                      <strong>{t('classView.misconception')}</strong> {gap.teaching.misconception}
+                    </p>
+                    <p>{gap.teaching.howToTeach}</p>
+                    {gap.suggestedMissionIds.length > 0 ? (
+                      <p className={styles.gapSuggestion}>
+                        {t('classView.suggestedMissions')}: {gap.suggestedMissionIds.join(', ')}
+                      </p>
+                    ) : null}
+                  </details>
                 ) : null}
               </li>
             ))}
