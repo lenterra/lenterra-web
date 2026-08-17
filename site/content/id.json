@@ -91,7 +91,7 @@
     },
     "formSubmit": "Susun surel pendaftaran",
     "formNote": "Kami tidak meminta satu pun keterangan tentang siswa perorangan pada tahap ini.",
-    "formNext": "Setelah surel Anda masuk, kami membalas dalam lima hari kerja dengan langkah berikutnya dan waktu yang bisa dipilih untuk pendaftaran kelas."
+    "formNext": "Surel Anda masuk ke kotak surat tim kami. Tidak ada balasan otomatis — surel itu dibaca orang, dan kami menghubungi Anda kembali untuk mengatur langkah berikutnya."
   },
   "teachers": {
     "title": "Untuk Guru — Lenterra",
@@ -193,7 +193,11 @@
     "heading": "Tentang",
     "intro": "Lenterra dikembangkan oleh Team NFZ dan bermula dari Find IT! UGM 2025. Namanya menggabungkan lentera dan terra — cahaya untuk belajar, berpijak pada tanah sendiri.",
     "teamTitle": "Team NFZ",
-    "team": ["Muhammad Faiz Atharrahman", "Firsa Athaya Raissa", "Nadya Saski Wardiman"],
+    "team": [
+      "Muhammad Faiz Atharrahman",
+      "Firsa Athaya Raissa",
+      "Nadya Saski Wardiman"
+    ],
     "contactTitle": "Menghubungi kami",
     "contactBody": "Untuk pertanyaan sekolah, kerja sama, atau soal data siswa, kirim surel ke alamat di bawah ini.",
     "repoTitle": "Kode sumber",

@@ -28,12 +28,17 @@ const OUT = join(HERE, '..', 'dist-site');
 /**
  * Where a registration email goes.
  *
- * **This must be a mailbox a person actually reads before the site is
- * published.** PRD-SITE-003 requires that submissions reach a real person who
- * responds, and a form that composes mail to an address nobody monitors is
- * worse than no form: a school believes it has made contact and hears nothing.
+ * An administrative mailbox. Nothing in this system reads it, watches it, or
+ * routes it — a person opens it when they open it, and no page here says
+ * otherwise.
+ *
+ * That constraint is why the copy beside the form no longer promises a reply
+ * within five working days. A promise nobody is on the hook for is worse than
+ * no promise: a school believes it has made contact, waits, and hears nothing.
+ * What the page says now is what is true — the message arrives, and somebody
+ * will read it.
  */
-const CONTACT_EMAIL = 'halo@lenterra.id';
+const CONTACT_EMAIL = 'halo@lenterra.faizath.com';
 
 /** Assets live in the org profile repository and are referenced, never forked (PRD-SITE-009). */
 const PROFILE_RAW = 'https://raw.githubusercontent.com/lenterra/.github/main/profile/assets';

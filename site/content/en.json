@@ -91,7 +91,7 @@
     },
     "formSubmit": "Compose the registration email",
     "formNote": "We ask for nothing at all about individual students at this stage.",
-    "formNext": "Once your email arrives we reply within five working days with the next steps and times you can pick for class enrolment."
+    "formNext": "Your email arrives in our team inbox. There is no automatic reply — a person reads it, and we come back to you to arrange the next steps."
   },
   "teachers": {
     "title": "For Teachers — Lenterra",
@@ -193,7 +193,11 @@
     "heading": "About",
     "intro": "Lenterra is built by Team NFZ and began at Find IT! UGM 2025. The name joins lentera, a lantern, with terra — a light for learning, standing on its own ground.",
     "teamTitle": "Team NFZ",
-    "team": ["Muhammad Faiz Atharrahman", "Firsa Athaya Raissa", "Nadya Saski Wardiman"],
+    "team": [
+      "Muhammad Faiz Atharrahman",
+      "Firsa Athaya Raissa",
+      "Nadya Saski Wardiman"
+    ],
     "contactTitle": "Getting in touch",
     "contactBody": "For school enquiries, partnerships, or anything about student data, write to the address below.",
     "repoTitle": "Source",
