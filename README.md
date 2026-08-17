@@ -13,6 +13,19 @@ would mean a second implementation of "may this teacher read this class", and
 duplicated authorisation is how a teacher ends up able to read another school's
 children's data.
 
+## Deploying
+
+Both artefacts go to Cloudflare Pages as one deployment, at
+`lenterra.faizath.com`:
+
+```bash
+npm run deploy:web
+```
+
+See [DEPLOYING.md](DEPLOYING.md). The single artefact is deliberate — it is what
+stops the two halves from erasing each other, which is what the deleted
+workflows did.
+
 ## Paths, and what the repository name decides
 
 Every internal link here is root-absolute: the site's navigation is built from

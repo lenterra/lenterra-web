@@ -12,6 +12,8 @@
     "dev": "npm run dev --workspace @lenterra/dashboard",
     "build:site": "node site/build.mjs",
     "check:site": "node site/build.mjs && node site/check.mjs",
-    "test:e2e": "npm run test:e2e --workspace @lenterra/dashboard"
+    "test:e2e": "npm run test:e2e --workspace @lenterra/dashboard",
+    "build:web": "node scripts/build-web.mjs",
+    "deploy:web": "npm run build:web && npx wrangler@3 pages deploy dist-web --project-name lenterra --branch main"
   }
 }
